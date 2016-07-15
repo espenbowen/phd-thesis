@@ -1,0 +1,92 @@
+\documentclass[12pt,a4paper]{article}
+
+%packages
+\usepackage{ifthen} % for conditional statements
+\newboolean{uprightparticles}
+\setboolean{uprightparticles}{false} %True for upright particle symbols
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{bookmark}
+\usepackage{placeins}
+\usepackage{lineno}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,patterns}
+\usepackage[export]{adjustbox}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{subcaption}
+\numberwithin{equation}{section}
+
+%colors
+\definecolor{lightblue}{rgb}{0.22,0.45,0.70}
+\definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
+\definecolor{denim}{rgb}{0.08, 0.38, 0.74}
+\definecolor{bleudefrance}{rgb}{0.19, 0.55, 0.91}
+
+%clickable table of contents
+\hypersetup{
+    colorlinks,
+    citecolor=denim,
+    filecolor=black,
+    linkcolor=denim,
+    urlcolor=black
+}
+
+%biber
+\usepackage[
+    backend=biber,
+    style=numeric-comp,
+    sorting=none,
+    url=false,
+    eprint=false,
+]{biblatex}
+\addbibresource{thesis.bib}
+
+%LHCb symbols
+\input{lhcb-symbols-def}
+\input{spd-symbols-def}
+\input{tracking-symbols-def}
+
+\pagenumbering{roman}
+
+\begin{document}
+
+\title{Thesis}
+\author{Espen Eie Bowen}
+
+\maketitle
+\clearpage
+\input{abstract}
+\clearpage
+\begingroup
+\hypersetup{linkcolor=black}
+\tableofcontents
+\endgroup
+\clearpage
+
+\linenumbers
+\pagenumbering{arabic}
+
+%chapters
+\input{chapters/introduction}
+\clearpage
+\input{chapters/theory}
+\clearpage
+\input{chapters/detector}
+\clearpage
+\input{chapters/tracking}
+\clearpage
+\input{chapters/upstream-tracking-upgrade}
+\clearpage
+\input{chapters/upstream-tracking-run2}
+\clearpage
+\input{chapters/kpimm}
+\clearpage
+\input{chapters/summary}
+\clearpage
+\input{chapters/appendix}
+\clearpage
+\printbibliography[heading=bibintoc,title={Bibliography}]
+
+\end{document}

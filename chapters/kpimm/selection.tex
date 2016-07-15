@@ -1,0 +1,114 @@
+\subsection{Candidate selection}
+\label{sec:kpimm:selection}
+
+The selection of \BdToKpimm candidates comprises several steps. Firstly, candidates are required to have `fired' at least one of the specified trigger lines at each of the three stages of the trigger. Subsequently, candidates must pass two sets of requirements: the first is a common selection known as `stripping' and the second is a loose preselection. Next, combinatorial background candidates are reduced using a multivariate classifier. Finally, exclusive backgrounds are removed with specific vetoes.
+
+\subsubsection{Data samples}
+
+The dataset used in this analysis comprises 1~\invfb of integrated luminosity collected at $\sqrt{s} = 7\tev$ in 2011 and 2~\invfb collected at $\sqrt{s}=8\tev$ in 2012. In addition, a number of simulated samples were used to evaluate possible peaking background contributions and to determine the acceptance correction.
+
+\subsubsection{Trigger requirements}
+
+At the first stage of the trigger, \lone, the event must have been triggered by a single muon from the \BdToKpimm decay. At the second level of the trigger, \hltone, at least one of two possible trigger lines must have been triggered by a single daughter particle from the \BdToKpimm decay. At the final level of the trigger, \hlttwo, at least one of several trigger lines must have been triggered by the daughters of the \BdToKpimm decay: these include both topological and muon triggers.
+
+\subsubsection{Stripping and preselection}
+
+The stripping is a set of common, cut-based requirements used to loosely select candidates of interest for similar analyses. The stripping line used in this analysis selects candidates of the form $\decay{\B}{X\mumu}$, where $X$ is one or more hadrons. The full set of stripping requirements are shown in Fig.~\ref{table:stripping}. The boolean variable \texttt{IsMuon} is used to select muons and requires the particle to have left hits in a given number of muon stations depending on its measured momentum. A global event cut (GEC) is applied on the number of hits in the SPD to reject very high mulitplicity events. 
+
+\begin{table}[!htb]
+  \centering
+  \caption{Stripping requirements applied to \BdToKpimm candidates.}
+  \label{table:stripping}
+    \begin{tabular}{l|c}
+     & Requirement \\
+    \hline
+    \multirow{5}{*}{\B} & $4600<M< 7000\mevcc$ \\
+    & vertex quality $\chi^{2}/{\rm ndf} < 6$ \\
+    & vertex separation $\chi^{2} > 121$  \\
+    & IP $\chi^{2} < 16$ \\
+    & DIRA $< 14\mrad$  \\
+    \hline
+    \multirow{3}{*}{\Kstarz} & $M < 6200\mevcc$ \\
+    & vertex quality $\chi^{2}/{\rm ndf} < 12$ \\
+    & vertex separation $\chi^{2} > 9$  \\
+    \hline
+    \multirow{2}{*}{\mumu} &  $M < 7100\mevcc$ \\
+    & vertex quality $\chi^{2}/{\rm ndf} < 12$ \\
+    \hline
+    \multirow{2}{*}{$\mu$} & \texttt{IsMuon} \\
+    & \dllmupi $>$ -3 \\
+    \hline
+    \multirow{2}{*}{tracks} & Ghost probability $< 0.4$ \\
+    & IP $\chi^{2} > 9$  \\
+    \hline
+    GEC & SPD multiplicity $< 600$ \\
+ \end{tabular}
+\end{table}
+
+A loose preselection of candidates is performed to remove pathological events. The full set of preselection requirements are shown in Fig.~\ref{table:presel}. The boolean variable \texttt{hasRich} requires the particle to have information from the \rich detectors. The angles $\theta$ and $\theta_{pair}$ represent the opening angle of a track from the beam and the opening angle between a track pair, respectively. The variables $\langle X \rangle$, $\langle Y \rangle$ and $\langle Z \rangle$ denote the mean primary vertex position.
+
+\begin{table}[!htb]
+  \centering
+  \caption{Preselection requirements applied to \BdToKpimm candidates.}
+  \label{table:presel}
+  \begin{tabular}{l|c}
+    & Requirement \\
+    \hline
+    \multirow{2}{*}{\kaon} & \texttt{hasRich} \\
+    & \dllkpi~$>$~-5 \\
+    \hline
+    \multirow{2}{*}{\pion} & \texttt{hasRich} \\
+    & \dllkpi~$<$~25 \\
+    \hline
+    track & $0 < \theta < 400$\mrad \\
+    track Pairs & $\theta_{pair} > 1$\mrad \\
+    \hline
+    \multirow{3}{*}{PV} & $|X - \langle X \rangle| < \hphantom{20}5\mm$\\
+    & $|Y - \langle Y \rangle| < \hphantom{20}5\mm$\\
+    & $|Z - \langle Z \rangle| < 200\mm$\\
+ \end{tabular}
+\end{table}
+
+\subsubsection{Multivariate classifier}
+
+A multivariate classifier is used to reduce the level of combinatorial background. A Boosted Decision Tree (BDT) classifier~\cite{bdt}, with the Adaboost algorithm~\cite{adaboost} is employed. The BDT was developed for the angular analysis of \BdToKstmm~\cite{kstmm-3fb}. 
+
+The BDT uses combination of kinematic and PID input variables: the \Bz candidate lifetime, the \Bz \ptot and \pt, the \Bz DIRA, the \Bz vertex quality $\chi^{2}$, the \dllkpi of the kaon and pion, the \dllmupi of the muons and the isolation of the four final state particles. The isolation exploits the idea that the daughters of `true' \BdToKpimm candidates should better isolated from other tracks in the event than those from `fake' candidates. 
+
+The training uses \BdToJPsiKst candidates as a proxy for the signal and \BdToKstmm candidates from the upper mass sideband as a proxy for the background. A $k$-folding approach~\cite{kfold} is employed to allow the full dataset to be used for testing and training in an unbiased way. 
+
+\subsubsection{Exclusive backgrounds}
+
+Several additional requirements are applied to remove contributions from decay modes that will peak at, or near to, the signal peak and therefore distort the distributions of \ctl, \ctk and $\phi$. These decay modes include \LbTopKmm and \BuToKmm as well as misidentified \BdToJPsiKpi, \BdToPsitwosKpi and \BdToKpimm. The full set of requirements are presented in Tab.~\ref{table:peaking}.
+
+A background from \LbTopKmm decays arises when the \proton is reconstructed as either of the hadron candidates. Candidates are rejected using PID information and alternative mass hypotheses. For the case when the \proton is reconstructed as the \pion, a new mass is constructed where the \pion is given the \proton mass hypothesis. Likewise for the case when the \proton is reconstructed as the \kaon, a new mass is constructed where the \kaon is given the \proton mass hypothesis, and the \pion the \kaon mass hypothesis. These new mass hypotheses are denoted as \mSwappKmm and \mDoubleSwappKmm repectively. Candidates from \LbTopKmm decays are expected have \mSwappKmm or \mDoubleSwappKmm consistent with the known \Lb mass.
+
+A further peaking background contribution can be formed if a \pim from elsewhere in the event is added to a genuine \BuToKmm decay to form a four-track final state.  As \BuToKmm candidates will accumulate at the nominal \Bz mass, these candidates are expected to reside in the upper \mkpimm sideband. They should also have a \Kp\mumu invariant mass, \mkmm, consistent with the nominal \Bz mass. 
+
+Candidates from \BdToJPsiKpi and  \BdToPsitwosKpi decays can contribute a background if the \pim (\Kp) is misidentified as a \mun (\mup) and the \mun (\mup) is misidentified as a \pim (\Kp).  For the case of $\mun \leftrightarrow \pim$ swaps, the invariant mass of the \pim and the \mup, after assigning the \pim the \muon mass hypothesis, should be consistent with the known \jpsi or \psitwos masses.  Likewise, for the case of $\Kp \leftrightarrow \pip$ swaps, the invariant mass of the \Kp and the \mun, after assigning the \Kp the \muon mass hypothesis, should be consistent with the known \jpsi or \psitwos masses. These new mass hypotheses are denoted $m_{(\pi\to\mu)\mu}$ and $m_{(K\to\mu)\mu}$ respectively.
+
+A background contribution from genuine \BdToKpimm decays can also be formed when the two hadron hypotheses are swapped. This leads to \Bz candidates being incorrectly reconstructed as \Bzb candidates and vice versa. These candidates are vetoed using hadron identification criteria.
+
+\begin{table}[!htb]
+  \centering
+  \caption{Requirements applied to veto exclusive backgrounds.  All invariant masses have the units \mevcc.}
+  \label{table:peaking}
+  \makebox[\textwidth][c]{
+  \bgroup
+    \def\arraystretch{1.5}
+  \begin{tabular}{l|l|l}
+    Decay mode & Mis-id & Veto\\
+    \hline
+    \multirow{2}{*}{\LbTopKmm} & $\proton\rightarrow\pion$ & $5575 < \mSwappKmm < 5665 ~ {\rm and} ~ \pion\dllppi > 0$ \\
+    & $\proton,\kaon\rightarrow\kaon,\pion$ & $5575 < \mDoubleSwappKmm < 5665 ~  {\rm and}  ~  \pion\dllkpi > 0$\\
+    \BuToKmm & Random \pion & $m_{\kaon\pion\muon\muon}>5380 ~ {\rm and} ~ 5220<\mkmm<5340$ \\
+    \multirow{2}{*}{\BdToJPsiKpi} & $\pion\leftrightarrow\muon$ & $2996 < m_{(\pion\to\mu)\mu} < 3196 ~ {\rm and} ~ (\pion\texttt{IsMuon} ~{\rm or}~ \pion\dllmupi>0)$ \\
+    & $\kaon\leftrightarrow\muon$ & $2996 < m_{(\kaon\to\mu)\mu} < 3196 ~ {\rm and} ~ (\kaon\texttt{IsMuon} ~{\rm or}~ \kaon\dllmupi>0)$\\
+    \multirow{2}{*}{\BdToPsitwosKpi} & $\pion\leftrightarrow\muon$ & $3626 < m_{(\pion\to\mu)\mu} < 3746 ~ {\rm and} ~ (\pion\texttt{IsMuon} ~{\rm or}~ \pion\dllmupi>5)$ \\
+    & $\kaon\leftrightarrow\muon$ & $3626 < m_{(\kaon\to\mu)\mu} < 3746 ~ {\rm and} ~ (\kaon\texttt{IsMuon} ~{\rm or}~ \kaon\dllmupi>5)$\\
+    \BdToKpimm & $\kaon\leftrightarrow\pion$ & $(\kaon\dllkpi - \pion\dllkpi) > 10$ \\
+ \end{tabular}
+ \egroup
+ }
+ \end{table}
+
