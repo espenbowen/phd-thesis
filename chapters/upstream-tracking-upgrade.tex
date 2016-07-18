@@ -22,7 +22,7 @@ The execution time of 27.20\ms is too slow for the algorithm to be used in the c
 
 The reconstruction efficiency is also too low for the algorithm to be used in the context of a software trigger as any inefficiency will be propagated to the next step of the chain. Furthermore, the efficiency is observed to decrease as a function of \ptot. This is unusual as higher \ptot tracks should bend less in the fringe magnetic field and be simpler to reconstruct.
 
-\begin{table}[!htb]
+\begin{table}[!tb]
 \caption{Reconstruction efficiency, ghost rate and execution time for the initial version (\texttt{v1r2}) of the \velout algorithm.}
 \begin{center}
 \begin{tabular}{c|c|c|c}
@@ -34,7 +34,7 @@ The reconstruction efficiency is also too low for the algorithm to be used in th
 \label{tab:perf_velout_v1r2}
 \end{table}
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/eff_p_v1r2.pdf}
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/eff_pt_v1r2.pdf}
@@ -42,7 +42,7 @@ The reconstruction efficiency is also too low for the algorithm to be used in th
 \label{fig:eff_velout_v1r2}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/gr_p_v1r2.pdf}
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/gr_pt_v1r2.pdf}
@@ -60,7 +60,7 @@ Previously, the hits were sorted by detector regions within layers. This meant t
 
 The inital version of the \velout algorithm used a Hough transform based on the distance of the hit from linear extrapolation of the \velo track to find cluster candidates. It required that all hits were located on one side of the extrapolated \velo track in the $x$-$z$ plane. While this is a good assumption for low \ptot tracks, it is not for high \ptot tracks as shown in Fig.~\ref{fig:wrong_side_hits}. This caused the track reconstruction efficiency to fall with increasing \ptot.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/wrong_side_hits.pdf}
 \caption{The fraction of truth matched tracks with at least one hit on the opposite side of the linearly extrapolated \velo track in the $x$-$z$ plane.}% as a function of the true \ptot of the simulated particle.}
@@ -75,7 +75,7 @@ In order to account for missing hits in the UT detector, if no quadruplets have 
  
 The tolerance window in $x$ around the extrapolated $x$ position of the doublet was tuned in simulation. Using simulated particles and their associated UT hits the difference, $\Delta x$, between the linearly extrapolated $x$ position of a doublet and the $x$ position of an associated hit in a given layer can be found. The distributions used for the tuning are shown in Fig.~\ref{fig:clustering_tolerance}.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
  \begin{center}
 \input{figs/tikz/upstream-tracking-upgrade-clustering}
 \caption{A schematic view of the clustering of UT hit candidates. Doublets in the first two layers are formed and then linearly extrapolated to the third and fourth layers to form triplets and quadruplets.}
@@ -83,7 +83,7 @@ The tolerance window in $x$ around the extrapolated $x$ position of the doublet 
 \end{center}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.32\textwidth]{figs/upstream-tracking-upgrade/dx0.pdf}
 \includegraphics[width=0.32\textwidth]{figs/upstream-tracking-upgrade/dx1.pdf}
@@ -106,7 +106,7 @@ As described in Sec.~\ref{sec:up-track-upgrade:motivation}, \velout tracks rathe
 
 A preselection of \pt $>400$\mevc reduces the number of input tracks passed to the Forward tracking by a factor three compared to using \velo tracks. The charge information allows asymmetric search windows to be opened in the T-stations, reducing the hit multiplicity by a factor two. A small window is also opened on the `wrong' side of the linear extrapolation for high \pt candidates as they are more likely to have been assigned the incorrect charge. The optimised search windows are shown schematically in Fig.~\ref{fig:searchwindow}. These two advancements lead to a greatly reduced execution time and ghost rate of the Forward algorithm. In order to prevent inefficiency due to the central acceptance of UT, any \velo tracks that are linearly extrapolated within the central hole are passed directly to the Forward tracking algorithm.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \input{figs/tikz/upstream-tracking-upgrade-search-window.tex}
 \caption{The search windows opened by the Forward algorithm with and without the charge and momentum information of the VeloUT candidates. The charge information allows asymmetric search windows to be opened. A small window is also opened on the `wrong' side of the linear extrapolation for high \pt candidates as they are more likely to have been assigned the incorrect charge.}
 \label{fig:searchwindow}
@@ -118,7 +118,7 @@ A preselection of \pt $>400$\mevc reduces the number of input tracks passed to t
 
 The track reconstruction efficiency, ghost rate and execution time of the \velout algorithm for both the initial version (\texttt{v1r2}) and the optimised version (\texttt{v2r2}) are shown in Tab.~\ref{tab:perf_velout_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_velout_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_velout_comp}. The optimised version shows large improvements in terms of track reconstruction efficiency and execution time. The increase in reconstruction efficiency is most evident at high \ptot where the initial version shows a negative trend for increasing \ptot. There is also a slight increase in the ghost rate. However, this is of lesser importance as the ghost rate can be further reduced during offline analysis.
 
-\begin{table}[!htb]
+\begin{table}[!tb]
 \caption{The performances of both the initial version (\texttt{v1r2}) and the optimised version (\texttt{v2r2}) of the \velout algorithm in terms of track reconstruction efficiency, ghost rate and execution time.}
 \begin{center}
 \begin{tabular}{c|c|c|c}
@@ -131,7 +131,7 @@ The track reconstruction efficiency, ghost rate and execution time of the \velou
 \label{tab:perf_velout_comp}
 \end{table}
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/eff_p_comp.pdf}
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/eff_pt_comp.pdf}
@@ -139,7 +139,7 @@ The track reconstruction efficiency, ghost rate and execution time of the \velou
 \label{fig:eff_velout_comp}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/gr_p_comp.pdf}
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/gr_pt_comp.pdf}
@@ -151,7 +151,7 @@ The track reconstruction efficiency, ghost rate and execution time of the \velou
 
 The track reconstruction efficiency, ghost rate and execution time of the Forward algorithm using \velo or \velout tracks as input are shown in Tab.~\ref{tab:perf_forward_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_fwd_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_fwd_comp}. The use of \velout tracks as input to the Forward algorithm drastically reduces the ghost rate and execution time. This comes at a small cost in the track reconstruction efficiency.
 
-\begin{table}[!htb]
+\begin{table}[!tb]
 \caption{The performances of the Forward algorithm using \velo or \velout tracks as input in terms of track reconstruction efficiency, ghost rate and execution time.}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{c|c|c|c|c}
@@ -164,7 +164,7 @@ The track reconstruction efficiency, ghost rate and execution time of the Forwar
  \label{tab:perf_forward_comp}
 \end{table}
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/fwd_eff_p_comp.pdf}
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/fwd_eff_pt_comp.pdf}
@@ -172,7 +172,7 @@ The track reconstruction efficiency, ghost rate and execution time of the Forwar
 \label{fig:eff_fwd_comp}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/fwd_gr_p_comp.pdf}
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/fwd_gr_pt_comp.pdf}

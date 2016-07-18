@@ -6,7 +6,7 @@
 
 The Large Hadron Collider (\lhc) at the Organisation Europ\'eene pour la Recherche Nucl\'eaire (\cern) is particle accelerator designed to collide protons at a center-of-mass energy (\sqs) of 14\tev~\cite{lhc}. It has a peak design (instantaneous) luminosity of \lum$= 10^{34}\cm^{-2}\sec^{-1}$ for proton operation. It is also used to accelerate heavy ions. The accelerator complex at \cern is shown in Fig.~\ref{fig:lhc}. The four main experiments are \atlas, \cms, \lhcb and \alice. \atlas and \cms are both multipurpose experiments, while \alice is used for the study of heavy ion collisions. The present thesis concerns the \lhcb experiment, of which an overview of the goals and design of the experiment is given below.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=\textwidth]{figs/detector/lhc.jpg}
 \caption{Schematic view of the CERN accelerator complex.}
@@ -22,7 +22,7 @@ The data used for physics analysis in this thesis was collected in 2011 and 2012
 
 The \lhcb detector is a single arm forward spectrometer that covers a pseudo-rapidity range of $2 < \eta < 5$. The layout of the \lhcb detector is shown in Fig.~\ref{fig:lhcb-run1}. The unique geometry takes advantage of the large \bquark- and \cquark-quark production in the forward region at the \lhc. The following requirements are crucial in order to fulfil the \lhcb physics programme: efficient, robust and flexible triggering on a variety of different final states, excellent tracking (momentum, impact parameter and primary vertex resolution), precise decay time resolution and excellent particle identification.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.8\textwidth]{figs/detector/lhcb-run1.pdf}
 \caption{Schematic view of the \lhcb detector.}
@@ -33,7 +33,7 @@ The \lhcb detector is a single arm forward spectrometer that covers a pseudo-rap
 
 A warm dipole magnet~\cite{magnet-tdr} is used in order to allow a measurement of the momentum of charged particles in the forward acceptance of $\pm$250\mrad vertically and $\pm$300\mrad horizontally. It provides an integrated magnetic field of 4~Tm for tracks of 10\m in length. The strength of the main component of the magnetic field, $B_{y}$, as a function of $z$ is shown in Fig.~\ref{fig:magnet}. The location of the tracking sub-detectors, described in Sec.~\ref{sec:lhcb:tracking}, are also shown. The polarity of the magnetic field is changed regularly in order to be able to control possible detection asymmetries.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \adjincludegraphics[width=\textwidth,trim={{.1\width} {.62\height} {.1\width} {.1\height}},clip]{figs/detector/magnet.pdf}
 \caption{The strength of the main component of the magnetic field, $B_{y}$, as a function of $z$. The location of the tracking sub-detectors are shown.}
@@ -47,7 +47,7 @@ The trajectory of charged particles traversing the \lhcb detector are reconstruc
 
 The Vertex Locator (\velo)~\cite{velo-tdr,velo-perf} is a silicon microstrip detector that provides measurements of track coordinates close to the \proton\proton interaction region. These precision measurements are used to identify both the primary interaction vertices and the displaced secondary vertices of the decays of \bquark- and \cquark-hadrons. The detector consists of 42 silicon micro-strip stations with $r$-$\phi$ geometry, shown schematically in Fig.~\ref{fig:velo}. It has two retractable halves which are opened and closed during each \lhc fill. When closed, the sensors are positioned only 7\mm from the \lhc beam. 
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=\textwidth]{figs/detector/velo.png}
 \caption{Schematic view of the \velo detector.}
@@ -56,7 +56,7 @@ The Vertex Locator (\velo)~\cite{velo-tdr,velo-perf} is a silicon microstrip det
 
 The Silicon Tracker (ST) consists of two silicon microstrip detectors: the Tracker Turicensis\footnote{Formerly known as the Trigger Tracker.} (TT)~\cite{lhcb-tdr} and the Inner Tracker (IT)~\cite{it-tdr}. The TT is located upstream of the magnet and covers the full acceptance of the experiment. The IT is located downstream of the magnet and covers a cross-shaped region at the center of the three tracking stations. Each ST station contains four layers with a \mbox{$x$-$u$-$v$-$x$} layout such that the $u$ and $v$ layers are tilted by $\pm$ 5$^{\circ}$ with respect to the vertical. The inclined layers allow stereo measurements to be made. A schematic view of the TT sub-detector is shown in Fig.~\ref{fig:tt}. As the beampipe passes through the the TT there is a square hole at the center of the detector which reduces its acceptance. The square hole has a width of 7.7\cm at the first TT sub-station (TTa) and 8.0\cm at the second (TTb).
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.8\textwidth]{figs/detector/tt.pdf}
 \caption{Schematic view of the TT sub-detector geometry. The different colours indicate the number of sensors that are wire bonded together in the $y$ direction.}
@@ -82,7 +82,7 @@ The primary goal of the \rich system~\cite{lhcb-tdr,rich-perf} is the identifica
 
 In the forward region covered by \lhcb, there is a strong anticorrelation between polar angle and momentum. Due to this, the \rich system consists of two detectors. The detector upstream of the magnet, \richone, covers the low and intermediate momentum region 2-40\gevc for the full angular acceptance 15-300\mrad. The downstream detector, \richtwo, covers the high momentum region 15-100\gevc over a reduced angular acceptance 15-120\mrad. \richone contains aerogel and \cfourften as gas radiators while \richtwo contains \cffour. The relationship between Cherekov angle and particle momentum is shown in Fig.~\ref{fig:radiators} for each of the three radiators.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[height=0.3\textheight]{figs/detector/radiators.png}
 \caption{Cherenkov angle versus particle momentum for the three gas radiators used in the \rich system.}
@@ -111,7 +111,7 @@ In the first stage of the software trigger (\hltone), a partial event reconstruc
 
 Events selected by \hltone are passed to the second stage of the software trigger (\hlttwo). In this stage, all tracks with a minimum \pt greater than 300\mevc are reconstructed without any requirement on IP or matched muon hits. A combination of exclusive and inclusive selections are used to reduce the event rate to 5\khz, which is written to disk. The inclusive selection of heavy flavour decays with hadrons in the final state is performed by a  ``topological'' algorithm containing a multivariate classifier that identifies \B decays with two-, three- and four-track vertices~\cite{trigger-inclusive,trigger-topo}.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.4\textwidth]{figs/detector/trigger-runI.pdf}
 \caption{The trigger scheme used for 2012 data taking.}
@@ -130,7 +130,7 @@ The \lhcb experiment will undergo an upgrade during Long Shutdown 2 (2018-2019) 
 
 Two key features of the \lhcb Upgrade are the following: a trigger-less readout system and a full software trigger~\cite{upgrade-trigger-tdr}. With the current experiment the collision rate must be reduced to the readout rate of 1\mhz. This is achieved using basic information from the calorimeters and muon system as described in Sec.~\ref{detector:trigger}. The largest inefficiencies in the trigger chain, especially for purely hadronic decays, occur at this stage. Furthermore, this constraint inhibits the operation of the detector at higher instantaneous luminosities as trigger yields for hadronic channels would saturate, as shown in Fig.~\ref{fig:upgrade-motivation}. Removing this bottleneck, by implementing a trigger-less readout system will allow the full rate of visible interactions to be processed by a purely software trigger. This trigger will offer great flexibility and improve the trigger efficiency significantly for a number of physics channels. It will also allow lifetime unbiased hadronic triggering for the first time at a hadron collider.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \adjincludegraphics[width=\textwidth,trim={{.2\width} {.59\height} {.2\width} {.1\height}},clip]{figs/detector/upgrade-motivation.pdf}
 \caption{The trigger yield as a function of instantaneous luminosity for different decays of \B mesons~\cite{upgrade-loi}.}

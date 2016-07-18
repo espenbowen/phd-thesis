@@ -8,7 +8,7 @@ The track reconstruction in \lhcb is performed by several different algorithms~\
 
 The tracks reconstructed in the \lhcb detector are divided into types depending on the sub-detectors in which they are reconstructed, as shown in Fig.~\ref{fig:track-types}. \velo tracks are defined as those which have measurements only in the \velo sub-detector. These tracks can be either forward or backward. Upstream tracks are defined as those which have measurements only in the \velo and TT (UT) sub-detectors. Upstream tracks are also referred to as \velott(\velout) tracks. T tracks are defined as those which have measurements solely in the T stations. Downstream tracks have measurements in the TT (UT) sub-detector and T stations. Long tracks have measurements in the \velo sub-detector and T stations and may also have measurements in the TT (UT) sub-detector. These tracks provide the best momentum resolution for particles which traverse the full tracking detector and are used in the majority of \lhcb analyses.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.8\textwidth]{figs/tracking/trackTypes.pdf}
 \caption{Schematic diagram of the \lhcb tracking system. The various track types reconstructed by the different tracking algorithms are shown.}
@@ -47,7 +47,7 @@ The \velo tracking algorithm~\cite{fastvelo} is used to find tracks in the \velo
 
 Starting from the longest $r$-$z$ track, $\phi$ hits are searched for that are consistent with coming from the same track. These 3D tracks are then fitted with a $\chi^{2}$ minimization.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
   \centering
   \input{figs/tikz/tracking-velo}
   \caption{Quadruplets of hits are searched for in the \velo starting from the most downstream layer. Starting with a hit in that layer, a search window is opened in the fourth most downstream layer. From hits found within the window, the expected position of hits in the intermediate layers can be predicted assuming the track is a straight line in the $r$-$z$ projection. If hits fall within a tolerance of the expected positions, quadruplets are formed and a track is created.}
@@ -59,7 +59,7 @@ Starting from the longest $r$-$z$ track, $\phi$ hits are searched for that are c
 
 The Forward tracking algorithm~\cite{patforward} is used to find long tracks. A Hough transform is utilised to associate hits in the T-stations to each \velo track. The \velo track is linearly extrapolated to the T-stations and a symmetric search window is opened in each $x$ layer. The VELO track state and knowledge of the $\vec{B}$ field are used to project each selected hit to the $z$ position of a reference plane. Hits from the same particle are expected to be projected to the same $x$ position while random hits should be uniformly distributed. This procedure is shown schematically in Fig.~\ref{fig:forward-tracking}. The resulting clusters are fitted and outliers are removed using a $\chi^{2}$ criterium. An additional cluster search is used to add stereo hits that are consistent with the $x$-$z$ track. This 3D track is then fitted, outliers are removed and the best track candidate is chosen based on its $\chi^{2}$/dof.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
   \centering
   \input{figs/tikz/tracking-forward}
   \caption{A Hough transform is used to associate hits in the T-stations to a \velo track. Each hit within a search window around the extrapolated track is projected to the $z$ position of a reference plane. Hits from the same particle are expected to be projected to the same $x$ position while random hits should be uniformly distributed.}
@@ -91,7 +91,7 @@ Each \velo track is linearly extrapolated to the TT. Search windows are opened i
 
  Each track candidate is fitted with a simplified $\chi^{2}$ minimisation and the $q/p$ of the track is estimated. Due to the fringe $\vec{B}$ field between the \velo and the TT a momentum estimate of $\delta p/p \sim~15\%$ is possible. The best track candidate is chosen based on the number of TT layers containing hits and the $\chi^{2}$ of the simplified fit. Each of the \velott tracks is subsequently fitted with a Kalman filter, described in Sec.~\ref{sec:track:fit}, in order to obtain the most accurate estimates of track parameters along with their corresponding covariances.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
   \centering
   \input{figs/tikz/tracking-velott}
   \caption{A Hough transform is utilised to associate the selected TT hits to the \velo track. Hits from the same particle are expected to be projected to the same $x$ position in the reference plane while random hits should be uniformly distributed.}
@@ -112,7 +112,7 @@ A Kalman filter is used to fit the tracks. With this approach, multiple scatteri
 
 Track candidates can be considered as a collection of track states (initially provided by the individual tracking algorithms) and measurements (tracking station hits). The Kalman filter can be divided into two steps, shown schematically in Fig.~\ref{fig:kalman}. Firstly, the parameters of a state at $z_{k}$ are predicted given a state at $z_{k-1}$. Next, the state at $z_{k}$ is updated with information of the measurement at this position. These two steps are repeated until all the measurements have been added. In \lhcb the filter is run in both the forward and the backward directions and the average is taken for smoothing.
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
   \centering
   \input{figs/tikz/tracking-kalman}
   \caption{A schematic diagram of the Kalman filter showing the prediction of a state $z_{k}$ given a state at $z_{k-1}$. The state is at $z_{k}$ is subsequently updated with information of the measurement at this position. This process is repeated until all measurements have been added.}
@@ -124,7 +124,7 @@ Track candidates can be considered as a collection of track states (initially pr
 
 The figures of merit used to evaluate the performance of tracking algorithms are the reconstruction efficiency, ghost rate and execution time and are determined using simulated events. The simulated samples used in the following sections to benchmark the performance of the upstream tracking algorithms for both the \lhcb Upgrade and \lhcb Run II are shown in Tab.~\ref{tab:track-mc-samples}.
 
-\begin{table}[!htb]
+\begin{table}[!tb]
 \caption{The simulated samples used in the following sections to benchmark the performance of the upstream tracking algorithms for both the \lhcb Upgrade and \lhcb Run II.}
 \begin{center}
 \begin{tabular}{c|c|c|c|c}

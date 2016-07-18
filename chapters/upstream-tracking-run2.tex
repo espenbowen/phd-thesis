@@ -11,7 +11,7 @@ Following the improved performance achieved using \velout tracks within the trac
 
 The track reconstruction efficiency, ghost rate and execution time of the VeloTT algorithm for Run I and Run II are shown in Table~\ref{tab:perf_velott_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_velott_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_velott_comp}. The Run II implementation shows large improvements in terms of track reconstruction efficiency and execution time. The increased track reconstruction efficiency is most evident at high \ptot as the Run I implementation shows a negative trend for increasing \ptot. There is also a slight increase in the ghost rate. However, this is of lesser importance as the ghost rate can be further reduced during offline analysis. 
 
-\begin{table}[!htb]
+\begin{table}[!tb]
 \caption{The performances of the VeloTT algorithms for Run I and Run II in terms of track reconstruction efficiency, ghost rate and execution time.}
 \label{tab:perf_velott_comp}
 \begin{center}
@@ -24,7 +24,7 @@ The track reconstruction efficiency, ghost rate and execution time of the VeloTT
 \end{center}
 \end{table}
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
 \begin{center}
   \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/VeloTT-eff-p.pdf}
   \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/VeloTT-eff-pt.pdf}
@@ -33,7 +33,7 @@ The track reconstruction efficiency, ghost rate and execution time of the VeloTT
   \end{center}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
   \begin{center}
     \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/VeloTT-gr-p.pdf}
     \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/VeloTT-gr-pt.pdf}
@@ -46,7 +46,7 @@ The track reconstruction efficiency, ghost rate and execution time of the VeloTT
 
 The track reconstruction efficiency, ghost rate and execution time of the Forward algorithm taking \velo or VeloTT tracks as input are shown in Table~\ref{tab:perf_forward_run2_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_forward_run2_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_forward_run2_comp}. The use of VeloTT tracks as input drastically reduces the ghost rate and execution time of the Forward algorithm. This comes at a small cost the in track reconstruction efficiency. This efficiency is retrieved in the second stage of the software trigger~\cite{hlt-runII}.
 
-\begin{table}[!htb]
+\begin{table}[!tb]
   \caption{The performances of the Forward algorithm using \velo or VeloTT tracks as input in terms of track reconstruction efficiency, ghost rate and execution time.}
   \label{tab:perf_forward_run2_comp}
   \begin{center}
@@ -59,7 +59,7 @@ The track reconstruction efficiency, ghost rate and execution time of the Forwar
   \end{center}
 \end{table}
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
   \begin{center}
     \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/Forward-eff-p.pdf}
     \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/Forward-eff-pt.pdf}
@@ -68,7 +68,7 @@ The track reconstruction efficiency, ghost rate and execution time of the Forwar
   \end{center}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!tb]
   \begin{center}
     \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/Forward-gr-p.pdf}
     \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/Forward-gr-pt.pdf}
