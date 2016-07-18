@@ -9,9 +9,26 @@ The transversity-basis moments of the 41 orthonormal angular functions are shown
 
 \begin{table}[!htb]
 \centering
+\caption{The transversity-basis moments of the 41 orthonormal angular functions $f_i(\Omega)$ in Eq.~\ref{eqn:vector_moments:1}.}
+\label{table:spd_mom_trans}
 \resizebox{\textwidth}{!}{
 \input{chapters/kpimm/tables/table_moments}
 }
-\caption{The transversity-basis moments of the 41 orthonormal angular functions $f_i(\Omega)$ in Eq.~\ref{eqn:vector_moments:1}.}
-\label{table:spd_mom_trans}
 \end{table}
+
+\section{Agreement between data and simulation}
+\label{sec:appendix:data-mc}
+
+\subsection{PID resampling}
+\label{sec:appendix:data-mc:pid}
+
+\begin{figure}[!tb]
+ \centering
+ \includegraphics[width=0.49\textwidth]{figs/kpimm/data-mc/resampling/Muplus_PIDmu.pdf}
+ \includegraphics[width=0.49\textwidth]{figs/kpimm/data-mc/resampling/Muminus_PIDmu.pdf}
+ \includegraphics[width=0.49\textwidth]{figs/kpimm/data-mc/resampling/K_PIDmu.pdf}
+ \includegraphics[width=0.49\textwidth]{figs/kpimm/data-mc/resampling/Pi_PIDmu.pdf}
+ \includegraphics[width=0.49\textwidth]{figs/kpimm/data-mc/resampling/Pi_PIDp.pdf}
+ \caption{Data-simulation agreement for the PID variables used in the selection of \BdToKpimm. The black data points show the distributions for sWeighted \BdToJPsiKst candidates in data. The red dashed histograms show the nominal distribution for simulated \BdToJPsiKst candidates. The blue histograms show the distribution for simulated \BdToJPsiKst candidates after the resampling procedure.}
+\label{fig:kpimm:data-mc:pid}
+\end{figure}

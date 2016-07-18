@@ -5,7 +5,7 @@ The selection of \BdToKpimm candidates comprises several steps. Firstly, candida
 
 \subsubsection{Data samples}
 
-The dataset used in this analysis comprises 1~\invfb of integrated luminosity collected at $\sqrt{s} = 7\tev$ in 2011 and 2~\invfb collected at $\sqrt{s}=8\tev$ in 2012. In addition, a number of simulated samples were used to evaluate possible peaking background contributions and to determine the acceptance correction.
+The Run 1 data sample collected by the \lhcb experiment is used for this analysis, corresponding to an integrated luminosity of 3.0\invfb. The data were recorded in \proton\proton collisions at centre-of-mass energies of 7 and 8\tev during 2011 and 2012, respectively. In addition, a number of simulated samples are used to evaluate possible peaking background contributions and to determine the acceptance correction.
 
 \subsubsection{Trigger requirements}
 
@@ -13,9 +13,9 @@ At the first stage of the trigger, \lone, the event must have been triggered by 
 
 \subsubsection{Stripping and preselection}
 
-The stripping is a set of common, cut-based requirements used to loosely select candidates of interest for similar analyses. The stripping line used in this analysis selects candidates of the form $\decay{\B}{X\mumu}$, where $X$ is one or more hadrons. The full set of stripping requirements are shown in Fig.~\ref{table:stripping}. The boolean variable \texttt{IsMuon} is used to select muons and requires the particle to have left hits in a given number of muon stations depending on its measured momentum. A global event cut (GEC) is applied on the number of hits in the SPD to reject very high mulitplicity events. 
+The stripping is a set of common, cut-based requirements used to loosely select candidates of interest for similar analyses. The stripping line used in this analysis selects candidates of the form $\decay{\B}{X\mumu}$, where $X$ is one or more hadrons. The full set of stripping requirements are shown in Table~\ref{table:stripping}. The boolean variable \texttt{IsMuon} is used to select muons and requires the particle to have left hits in a given number of muon stations depending on its measured momentum. A global event cut (GEC) is applied on the number of hits in the SPD to reject very high multiplicity events. 
 
-\begin{table}[!htb]
+\begin{table}[!tb]
   \centering
   \caption{Stripping requirements applied to \BdToKpimm candidates.}
   \label{table:stripping}
@@ -45,9 +45,9 @@ The stripping is a set of common, cut-based requirements used to loosely select 
  \end{tabular}
 \end{table}
 
-A loose preselection of candidates is performed to remove pathological events. The full set of preselection requirements are shown in Fig.~\ref{table:presel}. The boolean variable \texttt{hasRich} requires the particle to have information from the \rich detectors. The angles $\theta$ and $\theta_{pair}$ represent the opening angle of a track from the beam and the opening angle between a track pair, respectively. The variables $\langle X \rangle$, $\langle Y \rangle$ and $\langle Z \rangle$ denote the mean primary vertex position.
+A loose preselection of candidates is performed to remove pathological events. The full set of preselection requirements are shown in Table~\ref{table:presel}. The boolean variable \texttt{hasRich} requires the particle to have information from the \rich detectors. The angles $\theta$ and $\theta_{\rm pair}$ represent the opening angle of a track from the beam and the opening angle between a track pair, respectively. The variables $\langle X \rangle$, $\langle Y \rangle$ and $\langle Z \rangle$ denote the mean primary vertex position.
 
-\begin{table}[!htb]
+\begin{table}[!tb]
   \centering
   \caption{Preselection requirements applied to \BdToKpimm candidates.}
   \label{table:presel}
@@ -61,7 +61,7 @@ A loose preselection of candidates is performed to remove pathological events. T
     & \dllkpi~$<$~25 \\
     \hline
     track & $0 < \theta < 400$\mrad \\
-    track Pairs & $\theta_{pair} > 1$\mrad \\
+    track pairs & $\theta_{\rm pair} > 1$\mrad \\
     \hline
     \multirow{3}{*}{PV} & $|X - \langle X \rangle| < \hphantom{20}5\mm$\\
     & $|Y - \langle Y \rangle| < \hphantom{20}5\mm$\\
@@ -71,15 +71,15 @@ A loose preselection of candidates is performed to remove pathological events. T
 
 \subsubsection{Multivariate classifier}
 
-A multivariate classifier is used to reduce the level of combinatorial background. A Boosted Decision Tree (BDT) classifier~\cite{bdt}, with the Adaboost algorithm~\cite{adaboost} is employed. The BDT was developed for the angular analysis of \BdToKstmm~\cite{kstmm-3fb}. 
+A multivariate classifier is used to reduce the level of combinatorial background. A Boosted Decision Tree (BDT) classifier~\cite{bdt}, with the Adaboost algorithm~\cite{adaboost} is employed. The BDT was originall developed for the angular analysis of \BdToKstmm~\cite{kstmm-3fb}. 
 
-The BDT uses combination of kinematic and PID input variables: the \Bz candidate lifetime, the \Bz \ptot and \pt, the \Bz DIRA, the \Bz vertex quality $\chi^{2}$, the \dllkpi of the kaon and pion, the \dllmupi of the muons and the isolation of the four final state particles. The isolation exploits the idea that the daughters of `true' \BdToKpimm candidates should better isolated from other tracks in the event than those from `fake' candidates. 
+The BDT uses a combination of kinematic and PID input variables: the \Bz candidate lifetime, the \Bz \ptot and \pt, the \Bz DIRA, the \Bz vertex quality $\chi^{2}$, the \dllkpi of the kaon and pion, the \dllmupi of the muons and the isolation of the four final state particles. The isolation exploits the idea that the daughters of `true' \BdToKpimm candidates should better isolated from other tracks in the event than those from `fake' candidates. 
 
 The training uses \BdToJPsiKst candidates as a proxy for the signal and \BdToKstmm candidates from the upper mass sideband as a proxy for the background. A $k$-folding approach~\cite{kfold} is employed to allow the full dataset to be used for testing and training in an unbiased way. 
 
 \subsubsection{Exclusive backgrounds}
 
-Several additional requirements are applied to remove contributions from decay modes that will peak at, or near to, the signal peak and therefore distort the distributions of \ctl, \ctk and $\phi$. These decay modes include \LbTopKmm and \BuToKmm as well as misidentified \BdToJPsiKpi, \BdToPsitwosKpi and \BdToKpimm. The full set of requirements are presented in Tab.~\ref{table:peaking}.
+Several additional requirements are applied to remove contributions from decay modes that will peak at, or near to, the signal peak and therefore distort the distributions of \ctl, \ctk and $\phi$. These decay modes include \LbTopKmm and \BuToKmm as well as misidentified \BdToJPsiKpi, \BdToPsitwosKpi and \BdToKpimm. The full set of requirements are presented in Table~\ref{table:peaking}.
 
 A background from \LbTopKmm decays arises when the \proton is reconstructed as either of the hadron candidates. Candidates are rejected using PID information and alternative mass hypotheses. For the case when the \proton is reconstructed as the \pion, a new mass is constructed where the \pion is given the \proton mass hypothesis. Likewise for the case when the \proton is reconstructed as the \kaon, a new mass is constructed where the \kaon is given the \proton mass hypothesis, and the \pion the \kaon mass hypothesis. These new mass hypotheses are denoted as \mSwappKmm and \mDoubleSwappKmm repectively. Candidates from \LbTopKmm decays are expected have \mSwappKmm or \mDoubleSwappKmm consistent with the known \Lb mass.
 
@@ -89,7 +89,7 @@ Candidates from \BdToJPsiKpi and  \BdToPsitwosKpi decays can contribute a backgr
 
 A background contribution from genuine \BdToKpimm decays can also be formed when the two hadron hypotheses are swapped. This leads to \Bz candidates being incorrectly reconstructed as \Bzb candidates and vice versa. These candidates are vetoed using hadron identification criteria.
 
-\begin{table}[!htb]
+\begin{table}[!tb]
   \centering
   \caption{Requirements applied to veto exclusive backgrounds.  All invariant masses have the units \mevcc.}
   \label{table:peaking}
