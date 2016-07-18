@@ -5,11 +5,11 @@
 \section{Angular distribution}
 \label{sec:appendix:angular-distribution}
 
-The transversity-basis moments of the 41 orthonormal angular functions are shown in Tab.~\ref{table:spd_mom_trans}.  The S, P and D-wave transversity amplitudes are denoted as $S^{\{L,R\}}$, $H^{\{L,R\}}_{\{0,\parallel,\perp\}}$ and $D^{\{L,R\}}_{\{0,\parallel,\perp\}}$, respectively.
-
+The transversity-basis moments of the 41 orthonormal angular functions defined in Eq.~\ref{eqn:vector_moments} are shown in Table~\ref{table:spd_mom_trans}. The orthonormal angular basis is constructed out of the spherical harmonics, \mbox{$Y^m_l \equiv Y^m_l (\thetal,\phi)$}
+, and the reduced spherical harmonics, \mbox{${P^m_l \equiv \sqrt{2 \pi}Y^m_l(\thetak,0)}$}. The S, P and D-wave transversity amplitudes are denoted as $S^{\{L,R\}}$, $H^{\{L,R\}}_{\{0,\parallel,\perp\}}$ and $D^{\{L,R\}}_{\{0,\parallel,\perp\}}$, respectively.
 \begin{table}[!tb]
 \centering
-\caption{The transversity-basis moments of the 41 orthonormal angular functions $f_i(\Omega)$ in Eq.~\ref{eqn:vector_moments:1}.}
+\caption{The transversity-basis moments of the 41 orthonormal angular functions $f_i(\Omega)$ in Eq.~\ref{eqn:vector_moments}.}
 \label{table:spd_mom_trans}
 \resizebox{\textwidth}{!}{
 \input{chapters/kpimm/tables/table_moments}
@@ -31,4 +31,22 @@ The transversity-basis moments of the 41 orthonormal angular functions are shown
  \includegraphics[width=0.49\textwidth]{figs/kpimm/data-mc/resampling/Pi_PIDp.pdf}
  \caption{Data-simulation agreement for the PID variables used in the selection of \BdToKpimm. The black data points show the distributions for sWeighted \BdToJPsiKst candidates in data. The red dashed histograms show the nominal distribution for simulated \BdToJPsiKst candidates. The blue histograms show the distribution for simulated \BdToJPsiKst candidates after the resampling procedure.}
 \label{fig:kpimm:data-mc:pid}
+\end{figure}
+
+\section{The \kpimm invariant mass distribution}
+\label{sec:appendix:massfits}
+
+Figure~\ref{fig:massfit:bins} show the fits to the \mkpimm distribution in each of the \qsq bins used for the differential branching fraction measurement.
+ 
+\begin{figure}[!tb]
+\centering
+\includegraphics[width=0.48\linewidth]{figs/kpimm/massfit/fitKpimumu_q2_0p1_0p98.pdf}
+\includegraphics[width=0.48\linewidth]{figs/kpimm/massfit/fitKpimumu_q2_1p1_2p5.pdf}
+\includegraphics[width=0.48\linewidth]{figs/kpimm/massfit/fitKpimumu_q2_2p5_4p0.pdf}
+\includegraphics[width=0.48\linewidth]{figs/kpimm/massfit/fitKpimumu_q2_4p0_6p0.pdf}
+\includegraphics[width=0.48\linewidth]{figs/kpimm/massfit/fitKpimumu_q2_6p0_8p0.pdf}
+\includegraphics[width=0.48\linewidth]{figs/kpimm/massfit/fitKpimumu_q2_1p1_6p0.pdf}
+ 
+\caption{Invariant mass \mkpimm for the signal decay \BdToKpimm in  each of the \qsq bins used for the differential branching fraction measurement. The solid black line represents the total fitted function.  The individual components of the signal (blue shaded area) and combinatorial background (red hatched area) are also shown.}
+\label{fig:massfit:bins}
 \end{figure}
