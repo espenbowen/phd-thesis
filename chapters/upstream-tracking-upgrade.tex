@@ -16,7 +16,7 @@ In order to achieve the desired improvements within the reconstruction chain, th
 
 The inital version of the \velout algorithm for the \lhcb upgrade was a replication of the \velott algorithm used during Run I, described in Sec.~\ref{sec:track:algos:upstream}. The aim of this \velott algorithm was to reconstruct low momentum tracks that are bent out of acceptance by the magnet. As such, it was executed at the end of the tracking sequence only using \velo tracks which had not been upgraded to long tracks by any of the preceeding algorithms.
 
-The reconstruction efficiency, ghost rate and execution time for the initial version (\texttt{v1r2}) of the \velout algorithm are shown in Tab.~\ref{tab:perf_velout_v1r2}. The reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_velout_v1r2}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_velout_v1r2}. 
+The reconstruction efficiency, ghost rate and execution time for the initial version (\texttt{v1r2}) of the \velout algorithm are shown in Table~\ref{tab:perf_velout_v1r2}. The reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_velout_v1r2}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_velout_v1r2}. 
 
 The execution time of 27.20\ms is too slow for the algorithm to be used in the context of a software trigger. For reference, the track reconstruction in the \velo takes $\sim$ 1.8\ms. In order to be included the \velout algorithm should perform with a comparable or reduced execution time.
 
@@ -116,7 +116,7 @@ A preselection of \pt $>400$\mevc reduces the number of input tracks passed to t
 
 \subsubsection{\velout}
 
-The track reconstruction efficiency, ghost rate and execution time of the \velout algorithm for both the initial version (\texttt{v1r2}) and the optimised version (\texttt{v2r2}) are shown in Tab.~\ref{tab:perf_velout_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_velout_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_velout_comp}. The optimised version shows large improvements in terms of track reconstruction efficiency and execution time. The increase in reconstruction efficiency is most evident at high \ptot where the initial version shows a negative trend for increasing \ptot. There is also a slight increase in the ghost rate. However, this is of lesser importance as the ghost rate can be further reduced during offline analysis.
+The track reconstruction efficiency, ghost rate and execution time of the \velout algorithm for both the initial version (\texttt{v1r2}) and the optimised version (\texttt{v2r2}) are shown in Table~\ref{tab:perf_velout_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_velout_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_velout_comp}. The optimised version shows large improvements in terms of track reconstruction efficiency and execution time. The increase in reconstruction efficiency is most evident at high \ptot where the initial version shows a negative trend for increasing \ptot. There is also a slight increase in the ghost rate. However, this is of lesser importance as the ghost rate can be further reduced during offline analysis.
 
 \begin{table}[!tb]
 \caption{The performances of both the initial version (\texttt{v1r2}) and the optimised version (\texttt{v2r2}) of the \velout algorithm in terms of track reconstruction efficiency, ghost rate and execution time.}
@@ -149,7 +149,7 @@ The track reconstruction efficiency, ghost rate and execution time of the \velou
 
 \subsubsection{Forward}
 
-The track reconstruction efficiency, ghost rate and execution time of the Forward algorithm using \velo or \velout tracks as input are shown in Tab.~\ref{tab:perf_forward_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_fwd_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_fwd_comp}. The use of \velout tracks as input to the Forward algorithm drastically reduces the ghost rate and execution time. This comes at a small cost in the track reconstruction efficiency.
+The track reconstruction efficiency, ghost rate and execution time of the Forward algorithm using \velo or \velout tracks as input are shown in Table~\ref{tab:perf_forward_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_fwd_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_fwd_comp}. The use of \velout tracks as input to the Forward algorithm drastically reduces the ghost rate and execution time. This comes at a small cost in the track reconstruction efficiency.
 
 \begin{table}[!tb]
 \caption{The performances of the Forward algorithm using \velo or \velout tracks as input in terms of track reconstruction efficiency, ghost rate and execution time.}
