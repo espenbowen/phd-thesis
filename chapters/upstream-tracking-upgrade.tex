@@ -6,11 +6,11 @@
 
 The \lhcb upgrade, described in Sec.~\ref{sec:lhcb:lhcb-upgrade}, will feature a trigger-less readout system allowing the the full rate of visible interactions to be processed by a purely software trigger. Such a software trigger allows great flexibility in designing selections and efficient triggering of low momentum tracks normally beyond the scope of a hadron collider. It also places strict requirements on the execution time of the pattern recognition algorithms that run within it.
 
-The existing reconstruction chain was not able to achieve the required timing performance due to the vast combinatorics present in the upgrade conditions. Therefore, a novel idea was proposed to reduce the execution time by using upstream tracks as an intermediate step within the reconstruction chain~\cite{velout}.
+The existing reconstruction sequence was not able to achieve the required timing performance due to the vast combinatorics present in upgrade conditions. Therefore, a novel idea was proposed to reduce the execution time by using upstream tracks as an intermediate step within the reconstruction sequence~\cite{velout}.
 
-The advantages of using upstream tracks rather than \velo tracks as input to the Forward tracking algorithm arise from the extra information obtained concerning the momentum and charge of the track. Using the momentum information a preselection on the \pt of the track can be performed. Subsequently, for tracks passing the \pt requirement, the charge can be used to open smaller search windows downstream of the magnet. This leads to a greatly reduced execution time and ghost rate of the tracking sequence.
+The advantages of using upstream tracks rather than \velo tracks as input to the Forward tracking algorithm arise from the extra information obtained concerning the momentum and charge of the track. Using the momentum information, a preselection on the \pt of the track can be performed. Subsequently, for tracks passing the \pt requirement, the charge can be used to open smaller search windows downstream of the magnet. This leads to a greatly reduced execution time and ghost rate of the tracking sequence.
 
-In order to achieve the desired improvements within the reconstruction chain, the upstream algorithm itself must perform with a high reconstruction efficiency, low ghost rate and minimal execution time. Any loss of efficiency will be propagated to the next step of the chain. 
+In order to achieve the desired improvements within the reconstruction sequence, the upstream algorithm itself must perform with a high reconstruction efficiency, low ghost rate and minimal execution time. Any loss of efficiency will be propagated to the next step of the sequence. 
 
 \subsection{Initial peformance}
 
@@ -18,9 +18,9 @@ The inital version of the \velout algorithm for the \lhcb upgrade was a replicat
 
 The reconstruction efficiency, ghost rate and execution time for the initial version (\texttt{v1r2}) of the \velout algorithm are shown in Table~\ref{tab:perf_velout_v1r2}. The reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_velout_v1r2}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_velout_v1r2}. 
 
-The execution time of 27.20\ms is too slow for the algorithm to be used in the context of a software trigger. For reference, the track reconstruction in the \velo takes $\sim$ 1.8\ms. In order to be included the \velout algorithm should perform with a comparable or reduced execution time.
+The execution time of 27.20\ms is too slow for the algorithm to be used in the context of a software trigger. For reference, the track reconstruction in the \velo takes $\sim$ 1.8\ms. In order to be included, the \velout algorithm should perform with a comparable or reduced execution time.
 
-The reconstruction efficiency is also too low for the algorithm to be used in the context of a software trigger as any inefficiency will be propagated to the next step of the chain. Furthermore, the efficiency is observed to decrease as a function of \ptot. This is unusual as higher \ptot tracks should bend less in the fringe magnetic field and be simpler to reconstruct.
+The reconstruction efficiency is also too low for the algorithm to be used in the context of a software trigger as any inefficiency will be propagated to the next step of the sequence. Furthermore, the efficiency is observed to decrease as a function of \ptot. This is unusual as higher \ptot tracks should bend less in the fringe magnetic field and be simpler to reconstruct.
 
 \begin{table}[!tb]
 \caption{Reconstruction efficiency, ghost rate and execution time for the initial version (\texttt{v1r2}) of the \velout algorithm.}
@@ -54,20 +54,20 @@ The reconstruction efficiency is also too low for the algorithm to be used in th
 
 \subsubsection{Binary searches}
 
-Previously, the hits were sorted by detector regions within layers. This meant that for each layer, each detector region was looped over and if it was compatible with the extrapolated \velo track each hit within that region was looped over. In the new version, the UT hits in each layer are sorted by their $x$ position at $y = 0$. For each layer, a binary search is performed to find the first hit which is within the search window. The hits are then looped over until that requirement is no longer satisfied. The new method greatly reduces the execution time.
+Previously, the UT hits were sorted by detector regions within layers. This meant that for each layer, each detector region was looped over and if it was compatible with the extrapolated \velo track each hit within that region was looped over. In the new version, the hits in each layer are sorted by their $x$ position at $y = 0$. For each layer, a binary search is performed to find the first hit which is within the search window. The hits are then looped over until that requirement is no longer satisfied. The new method greatly reduces the execution time.
 
-\subsubsection{Clustering}
+\subsubsection{Hit clustering}
 
-The inital version of the \velout algorithm used a Hough transform based on the distance of the hit from linear extrapolation of the \velo track to find cluster candidates. It required that all hits were located on one side of the extrapolated \velo track in the $x$-$z$ plane. While this is a good assumption for low \ptot tracks, it is not for high \ptot tracks as shown in Fig.~\ref{fig:wrong_side_hits}. This caused the track reconstruction efficiency to fall with increasing \ptot.
+The inital version of the \velout algorithm used a Hough transform based on the distance of the hit from linear extrapolation of the \velo track to find cluster candidates. It required that all hits were located on one side of the extrapolated \velo track in the $x$-$z$ plane. While this is a good assumption for low \ptot tracks, it is not the case for high \ptot tracks. For high \ptot tracks, a significant number have at least one hit on the opposite side of the linearly extrapolated \velo track, as shown in Fig.~\ref{fig:wrong_side_hits}. This caused the track reconstruction efficiency to fall with increasing \ptot.
 
 \begin{figure}[!tb]
 \centering
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/wrong_side_hits.pdf}
-\caption{The fraction of truth matched tracks with at least one hit on the opposite side of the linearly extrapolated \velo track in the $x$-$z$ plane.}% as a function of the true \ptot of the simulated particle.}
+\caption{The fraction of truth matched tracks with at least one hit on the opposite side of the linearly extrapolated \velo track in the $x$-$z$ plane.}
 \label{fig:wrong_side_hits}
 \end{figure}
 
-The clustering of UT hits is shown schematically in Fig.~\ref{fig:clustering}. The hits are clustered by first forming doublets (two hits in the same station but in different layers), and then extending those doublets to the opposite station and searching for compatible hits to form triplets or quadruplets. 
+A new method for clustering UT hits was developed in order to remedy this flaw and is shown schematically in Fig.~\ref{fig:clustering}. In this new method, UT hits are clustered by first forming doublets (two hits in the same station but in different layers), and then extending those doublets to the opposite station and searching for compatible hits to form triplets or quadruplets. 
  
 A doublet is formed by taking one hit in the first layer and another in the second layer. The $x$-slope of the doublet is calculated and if it is below a given threshold the doublet is linearly extrapolated to the third layer where a tolerance window is opened. If there are compatible hits within this window, triplets are formed. For each triplet, the doublet is linearly extrapolated to the fourth layer. A reduced tolerance window is opened and compatible hits are used to form quadruplets. If no quadruplets are formed from any of the triplets, triplets are also searched for with the original doublet and hits in the fourth layer. This process is repeated for every doublet combination.
  
@@ -98,13 +98,13 @@ The tolerance window in $x$ around the extrapolated $x$ position of the doublet 
 
 \subsubsection{Track fit}
 
-The initial version fitted each of the \velout tracks with a Kalman filter, described in Sec.~\ref{sec:track:fit}, in order to the most accurate estimates of track parameters along with their corresponding covariances. This is very costly in terms of execution time and did not provided any significant improvement to the momentum or charge estimation. This fitting step was removed and the momentum and charge information taken from the simplified fit described in Sec.~\ref{sec:track:algos:upstream} leading to a vast improvement in the execution time.
+The initial version of the \velout algorithm fitted each of the \velout tracks with a Kalman filter, described in Sec.~\ref{sec:track:fit}, in order to obtain the most accurate estimates of track parameters along with their corresponding covariances. This was very costly in terms of execution time and did not provided any significant improvement to the momentum or charge estimation. The kalman filter removed and the momentum and charge information taken from the simplified fit described in Sec.~\ref{sec:track:algos:upstream}, leading to a vast improvement in the execution time.
 
 \subsection{Upgrading to long tracks}
 
 As described in Sec.~\ref{sec:up-track-upgrade:motivation}, \velout tracks rather than \velo tracks will be used input to the Forward tracking algorithm in the \lhcb Upgrade. Using the charge and momentum information of the \velout track it is possible to make smarter selections on the input tracks and T-station hits considered by the Forward algorithm. 
 
-A preselection of \pt $>400$\mevc reduces the number of input tracks passed to the Forward tracking by a factor three compared to using \velo tracks. The charge information allows asymmetric search windows to be opened in the T-stations, reducing the hit multiplicity by a factor two. A small window is also opened on the `wrong' side of the linear extrapolation for high \pt candidates as they are more likely to have been assigned the incorrect charge. The optimised search windows are shown schematically in Fig.~\ref{fig:searchwindow}. These two advancements lead to a greatly reduced execution time and ghost rate of the Forward algorithm. In order to prevent inefficiency due to the central acceptance of UT, any \velo tracks that are linearly extrapolated within the central hole are passed directly to the Forward tracking algorithm.
+A preselection of \pt $>400$\mevc reduces the number of input tracks passed to the Forward tracking by a factor three compared to using \velo tracks. The charge information allows asymmetric search windows to be opened in the T-stations, reducing the hit multiplicity by a factor two. A small window is also opened on the `wrong' side of the linear extrapolation for high \pt candidates as they are more likely to have been assigned the incorrect charge. The optimised search windows are shown schematically in Fig.~\ref{fig:searchwindow}. These two advancements lead to a greatly reduced execution time and ghost rate of the Forward algorithm. In order to prevent a loss in efficiency due to the central acceptance of the UT, any \velo tracks that are linearly extrapolated within the central hole are passed directly to the Forward tracking algorithm.
 
 \begin{figure}[!tb]
 \input{figs/tikz/upstream-tracking-upgrade-search-window.tex}
@@ -182,5 +182,5 @@ The track reconstruction efficiency, ghost rate and execution time of the Forwar
 
 \subsection{Summary}
 
-The vast improvements in the performance of the \velout and the subsequent improvement to the overall tracking sequence led to the algorithm being adopted into the default tracking sequence for the \lhcb Upgrade~\cite{upgrade-tracker-tdr,upgrade-trigger-tdr}. It will play a large role in allowing \lhcb to become the first hadron collider experiment to operate a software-only trigger at the full event rate.
+The vast improvements in the performance of the \velout algorithm and the subsequent improvement to the overall tracking sequence led to the algorithm being adopted into the default tracking sequence for the \lhcb Upgrade~\cite{upgrade-tracker-tdr,upgrade-trigger-tdr}. It will play a large role in allowing \lhcb to become the first hadron collider experiment to operate a software-only trigger at the full event rate.
 
