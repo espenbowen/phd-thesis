@@ -1,4 +1,4 @@
-thesis.pdf: thesis.tex thesis.bib abstract.tex chapters/*.tex chapters/*/*.tex
+thesis.pdf: thesis.tex thesis.bib chapters/*.tex chapters/*/*.tex
 	pdflatex thesis
 	biber thesis
 	pdflatex thesis
