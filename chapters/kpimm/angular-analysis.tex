@@ -16,7 +16,7 @@ The 41 background-subtracted and acceptance-corrected moments are estimated as
  C_{ij} = \sum_{k=1}^{n_{\rm sig}} w^{2}_{k}f_i(\Omega_k)f_j(\Omega_k)   + x^2\sum_{k=1}^{n_{\rm bkg}} w^{2}_{k}f_i(\Omega_k)f_j(\Omega_k).
 \end{equation}
 
-\noindent Here $n_{\rm sig}$ and $n_{\rm bkg}$ correspond to the candidates in the signal and background regions, respectively. The signal region is defined within $\pm 50\mevcc$ of the \Bz mass, and the background region in the range $5350<\mkpimm<5700$~\mevcc.  The scale-factor $x$ is the ratio of the estimated number of background candidates in the signal region, $\tilde{n}^{\rm bkg}_{\rm sig}$, over the number of candidates in the background region, $n_{\rm bkg}$, and is used for the background subtraction.
+\noindent Here $n_{\rm sig}$ and $n_{\rm bkg}$ correspond to the candidates in the signal and background regions, respectively. The signal region is defined within $\pm 50\mevcc$ of the \Bz mass, and the background region in the range $5350<\mkpimm<5700$~\mevcc. The scale-factor $x$ is the ratio of the estimated number of background candidates in the signal region, $\tilde{n}^{\rm bkg}_{\rm sig}$, over the number of candidates in the background region, $n_{\rm bkg}$, and is used for the background subtraction.
 It has been checked in data that the angular distribution of the background is independent of \mkpimm within the precision of this measurement, and that the uncertainty of $x$ has negligible impact on the results.
 The weights, $w_{k}$, are the reciprocal of the candidate's efficiency and account for the acceptance, described in Sec.~\ref{sec:kpimm:acceptance}.
 
@@ -29,14 +29,14 @@ The reduced covariance matrix for deriving the statistical uncertainty in the 40
 \subsubsection{Toy studies}
 \label{sec:kpimm:angular-analysis:toys}
 
-In order to validate the moments analysis, toy studies are performed using simulated datasets. 
+In order to validate the moments analysis, toy studies are performed using simulated datasets. Signal decays are generated according to a realistic model taking into account contributions from $K^\ast(1410)^0$~\cite{Zwicky-K_1_1410}, $K^\ast_0(1430)^0$~\cite{Wang-K_0_1430} and $K^\ast_2(1430)^0$~\cite{Wang-K_2_1430} states. The generated values for each of the moments are calculated using a numeric integration. The specified \mkpi and \qsq range is iterated over and the amplitudes at each point are calculated. The moments are then derived from these amplitudes using the relations given in Appendix~\ref{sec:appendix:angular-distribution}.
 
-The toy datasets are generated in the range $1330<\mkpi<1530~\mevcc$ and $1.1<\qsq<6.0\gevgevcccc$. Each dataset contains 200 signal candidates and 700 combinatorial background candidates. The background is generated flat in \qsq, \ctl, \ctk, $\phi$ and \mkpi and according to an exponential distribution in \mkpimm. Acceptance effects are also included using the efficiency function described in Sec.~\ref{sec:kpimm:acceptance}.
+The toy datasets are generated in the range $1330<\mkpi<1530~\mevcc$ and $1.1<\qsq<6.0\gevgevcccc$. Each dataset contains a realistic amount of signal and background candidates, the numbers of which are both Poisson fluctuated. Background candidates are generated flat in \qsq, \ctl, \ctk, $\phi$, and \mkpi, and according to an exponential distribution in \mkpimm. Acceptance effects are also included using the efficiency function described in Sec.~\ref{sec:kpimm:acceptance}.
  
-The 40 normalised moments $\overline{\Gamma}_{2}-\overline{\Gamma}_{41}$ are measured for each of the toy datasets. Pull studies are performed to check that the method is unbiased and correctly estimates the uncertainty. The pull of the observable $a$ is defined as $(a_{\rm meas}-a_{\rm gen})/\sigma(a)_{\rm meas}$. If the method is unbiased and the uncertainties are accurate, the pull distribution should be a Gaussian with mean 0 and width 1.  The results of the pull studies are shown in Table~\ref{table:spd:toy_pulls} and in Appendix~\ref{sec:appendix:kpimm:toys}. No significant bias is observed for any of the measured moments.
+The 40 normalised moments $\overline{\Gamma}_{2}-\overline{\Gamma}_{41}$ are measured for each of the toy datasets. Pull studies are performed to check that the method is unbiased and correctly estimates the uncertainty. The pull of the observable $a$ is defined as $(a_{\rm meas}-a_{\rm gen})/\sigma(a)_{\rm meas}$~\cite{lyons-pulls}. If the method is unbiased and the coverage is correct, the pull distribution should be a Gaussian centred at zero with unit width. The results of the pull studies are shown in Table~\ref{table:spd:toy_pulls} and in Appendix~\ref{sec:appendix:kpimm:toys}. No significant bias is observed for any of the measured moments.
 
 \begin{table}[!tb]
-\caption{Results of the pull distributions for toys datasets.}
+\caption{Results of the pull studies for toys datasets.}
 \centering
 \begin{tabular}{l|c|c}
 $\overline{\Gamma}_{\it{i}}$ & mean & width \\ 
@@ -90,12 +90,12 @@ $\overline{\Gamma}_{41}$ & $-0.01$ $\pm$ 0.02 & $0.96$ $\pm$ 0.02 \\
 \label{table:spd:toy_pulls}
 \end{table}
 
-\subsubsection{Consistency relations}
+%\subsubsection{Consistency relations}
 
 \subsubsection{F-wave moments}
 
-The angular analysis assumes that the $\Kp\pim$ system is in a S-, P- or D-wave configuration only.  Contributions from F-wave states (or higher) are assumed to be negligible.  This assumption is cross-checked by measuring the 18 moments corresponding to the $\Kp\pim$ in a F-wave configuration. The measured values are shown in Fig.~\ref{fig:kpimm:angular-analysis:f-wave:fig} and Table~\ref{fig:kpimm:angular-analysis:f-wave:tab}.  All the measured moments are consistent with zero.  
-  
+The angular analysis assumes that the $\Kp\pim$ system is in a S-, P- or D-wave configuration only. Contributions from F-wave states (or higher) are assumed to be negligible. This assumption is cross-checked by measuring the 18 moments corresponding to the $\Kp\pim$ in a F-wave configuration. The measured values are shown in Fig.~\ref{fig:kpimm:angular-analysis:f-wave:fig} and Table~\ref{fig:kpimm:angular-analysis:f-wave:tab}. All the measured moments are consistent with zero.
+
 \begin{figure}[!htb]
 \caption{Results of the cross-check of the F-wave contribution. All the measured moments are consistent with zero.}
 \centering
