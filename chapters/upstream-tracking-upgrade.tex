@@ -4,7 +4,7 @@
 \subsection{Motivation}
 \label{sec:up-track-upgrade:motivation}
 
-The \lhcb upgrade, described in Sec.~\ref{sec:lhcb:lhcb-upgrade}, will feature a trigger-less readout system allowing the the full rate of visible interactions to be processed by a purely software trigger. Such a software trigger allows great flexibility in designing selections and efficient triggering of low momentum tracks normally beyond the scope of a hadron collider. It also places strict requirements on the execution time of the pattern recognition algorithms that run within it.
+The \lhcb upgrade will feature a trigger-less readout system allowing the full rate of visible interactions to be processed by a purely software trigger. Such a software trigger allows great flexibility in designing selections and efficient triggering of low momentum tracks normally beyond the scope of a hadron collider. It also places strict requirements on the execution time of the pattern recognition algorithms that run within it.
 
 The existing reconstruction sequence was not able to achieve the required timing performance due to the vast combinatorics present in upgrade conditions. Therefore, a novel idea was proposed to reduce the execution time by using upstream tracks as an intermediate step within the reconstruction sequence~\cite{velout}.
 
@@ -52,6 +52,8 @@ The reconstruction efficiency is also too low for the algorithm to be used in th
 
 \subsection{Improvements}
 
+In order to meet the requirements of the software trigger a number of improvements were made to the \velout algorithm. This involved numerous \cpp optimisations as well as changes to the logic. The three changes which had the largest effect are described in detail below.
+
 \subsubsection{Binary searches}
 
 Previously, the UT hits were sorted by detector regions within layers. This meant that for each layer, each detector region was looped over and if it was compatible with the extrapolated \velo track each hit within that region was looped over. In the new version, the hits in each layer are sorted by their $x$ position at $y = 0$. For each layer, a binary search is performed to find the first hit which is within the search window. The hits are then looped over until that requirement is no longer satisfied. The new method greatly reduces the execution time.
@@ -63,7 +65,7 @@ The inital version of the \velout algorithm used a Hough transform based on the 
 \begin{figure}[!tb]
 \centering
 \includegraphics[width=0.45\textwidth]{figs/upstream-tracking-upgrade/wrong_side_hits.pdf}
-\caption{The fraction of truth matched tracks with at least one hit on the opposite side of the linearly extrapolated \velo track in the $x$-$z$ plane.}
+\caption{The fraction of truth matched tracks with at least one hit on the opposite side of the linearly extrapolated \velo track in the $x$-$z$ plane as a function of \ptot.}
 \label{fig:wrong_side_hits}
 \end{figure}
 
@@ -98,17 +100,17 @@ The tolerance window in $x$ around the extrapolated $x$ position of the doublet 
 
 \subsubsection{Track fit}
 
-The initial version of the \velout algorithm fitted each of the \velout tracks with a Kalman filter, described in Sec.~\ref{sec:track:fit}, in order to obtain the most accurate estimates of track parameters along with their corresponding covariances. This was very costly in terms of execution time and did not provided any significant improvement to the momentum or charge estimation. The kalman filter removed and the momentum and charge information taken from the simplified fit described in Sec.~\ref{sec:track:algos:upstream}, leading to a vast improvement in the execution time.
+The initial version of the \velout algorithm fitted each of the \velout tracks with a Kalman filter, described in Sec.~\ref{sec:track:fit}, in order to obtain the most accurate estimates of track parameters along with their corresponding covariances. This was very costly in terms of execution time and did not provided any significant improvement to the momentum or charge estimation. The Kalman filter was removed and the momentum and charge information taken from the simplified fit described in Sec.~\ref{sec:track:algos:upstream}, leading to a vast improvement in the execution time.
 
 \subsection{Upgrading to long tracks}
 
-As described in Sec.~\ref{sec:up-track-upgrade:motivation}, \velout tracks rather than \velo tracks will be used input to the Forward tracking algorithm in the \lhcb Upgrade. Using the charge and momentum information of the \velout track it is possible to make smarter selections on the input tracks and T-station hits considered by the Forward algorithm. 
+\velout tracks rather than \velo tracks will be used as input to the Forward tracking algorithm in the \lhcb Upgrade. Using the charge and momentum information of the \velout track it is possible to make smarter selections on the input tracks and T-station hits considered by the Forward algorithm. 
 
-A preselection of \pt $>400$\mevc reduces the number of input tracks passed to the Forward tracking by a factor three compared to using \velo tracks. The charge information allows asymmetric search windows to be opened in the T-stations, reducing the hit multiplicity by a factor two. A small window is also opened on the `wrong' side of the linear extrapolation for high \pt candidates as they are more likely to have been assigned the incorrect charge. The optimised search windows are shown schematically in Fig.~\ref{fig:searchwindow}. These two advancements lead to a greatly reduced execution time and ghost rate of the Forward algorithm. In order to prevent a loss in efficiency due to the central acceptance of the UT, any \velo tracks that are linearly extrapolated within the central hole are passed directly to the Forward tracking algorithm.
+A preselection of \pt $>400$\mevc reduces the number of input tracks passed to the Forward tracking by a factor three compared to using \velo tracks. The charge information allows smaller, asymmetric search windows to be opened in the T-stations, reducing the hit multiplicity by a factor two. A small window is also opened on the `wrong' side of the linear extrapolation for high \pt candidates as they are more likely to have been assigned the incorrect charge. The optimised search windows are shown schematically in Fig.~\ref{fig:searchwindow}. These two advancements lead to a greatly reduced execution time and ghost rate of the Forward algorithm. In order to prevent a loss in efficiency due to the central acceptance of the UT, any \velo tracks that are linearly extrapolated within the central hole are passed directly to the Forward tracking algorithm.
 
 \begin{figure}[!tb]
 \input{figs/tikz/upstream-tracking-upgrade-search-window.tex}
-\caption{The search windows opened by the Forward algorithm with and without the charge and momentum information of the VeloUT candidates. The charge information allows asymmetric search windows to be opened. A small window is also opened on the `wrong' side of the linear extrapolation for high \pt candidates as they are more likely to have been assigned the incorrect charge.}
+\caption{The search windows opened by the Forward algorithm with and without the charge and momentum information of the VeloUT candidates. The charge information allows smaller, asymmetric search windows to be opened. A small window is also opened on the `wrong' side of the linear extrapolation for high \pt candidates as they are more likely to have been assigned the incorrect charge.}
 \label{fig:searchwindow}
 \end{figure}
 
