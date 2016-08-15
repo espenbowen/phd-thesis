@@ -1,71 +1,67 @@
 \subsection{Differential branching fraction}
 \label{sec:kpimm:bf}
  
-The differential branching fraction of the decay \BdToKpimm in a \qsq bin of width $(q^{2}_{\text{max}} - q^{2}_{\text{min}})$ is estimated by normalising the \BdToKpimm yield, $N_{\kpimm}$, to the total event yield of the \BdToJPsiKst control sample, $N_{\jpsi\Kstarz}$, correcting for the relative efficiency between the two decays, $\varepsilon_{\jpsi\Kstarz}/\varepsilon_{\kpimm}$,
- 
+The differential branching fraction $\deriv\BF/\deriv\qsq$ of the decay \BdToKpimm in an interval ($q^{2}_{\text{min}}$, $q^{2}_{\text{max}}$) is given by
+
 \begin{equation}
 \begin{split}
-\frac{\deriv\BF}{\deriv\qsq} = &\frac{1}{(q^{2}_{\text{max}} - q^{2}_{\text{min}}) }f_{\KstP}\BF(\BdToJPsiKstP)\BF(\decay{\jpsi}{\mumu}) \\
-&\times\BF(\decay{\KstP}{\Kp\pim})\frac{N_{\kpimm}}{(1-F_{\rm S}^{\jpsi\Kstarz})N_{\jpsi\Kstarz}} \frac{\varepsilon_{\jpsi\Kstarz}}{\varepsilon_{\kpimm}}.
+\frac{\deriv\BF}{\deriv\qsq} = \frac{1}{(q^{2}_{\text{max}} - q^{2}_{\text{min}}) }&f_{\KstP}\BF(\BdToJPsiKstP)\BF(\decay{\jpsi}{\mumu}) \\
+\times&\BF(\decay{\KstP}{\Kp\pim})\frac{N'_{\kpimm}}{(1-F_{\rm S}^{\jpsi\Kstarz})N'_{\jpsi\Kstarz}}.
 \end{split}
 \label{eqn:dbfdq2}
 \end{equation}
  
-\noindent The number of \BdToJPsiKst and \BdToKpimm candidates are obtained from unbinned maximum likelihood fits to their respective $\mkpimm$ distributions, as described in Sec.~\ref{sec:kpimm:massfit}. The number of \BdToJPsiKst candidates has to be corrected for the S-wave fraction within the narrow $\mkpi$ window of \BdToJPsiKst decays, $F_{\rm S}^{\jpsi\Kstarz}$. The value of $F_{\rm S}^{\jpsi\Kstarz}$ is obtained from Ref.~\cite{LHCb-JpsiKstar} and is adjusted to the $\mkpi$ range $796<\mkpi<996~\mevcc$. The branching fractions $\BF(\BdToJPsiKstP)$, $\BF(\decay{\jpsi}{\mumu})$ and $\BF(\decay{\KstP}{\Kp\pim})$ are $(1.19\pm0.01\pm0.08)\times10^{-3}$~\cite{belle-z-paper}, $(5.961 \pm 0.033) \times 10^{-2}$~\cite{pdg} and 2/3, respectively. The fraction $f_{\KstP}$ is used to scale the value of $\BF(\BdToJPsiKstP)$ to the correct \mkpi range.  The value of $f_{\KstP}$ is calculated by integrating the $\KstP$ lineshape given in Ref.~\cite{belle-z-paper} over the range $796<\mkpi<996~\mevcc$.
+\noindent where $N'_{\kpimm}$ and $N'_{\jpsi\Kstarz}$ are the acceptance corrected yields of the \BdToKpimm and \BdToJPsiKst candidates, respectively. This yield of \BdToJPsiKst candidates has to be corrected for the S-wave fraction within the narrow $\mkpi$ window of \BdToJPsiKst decays, $F_{\rm S}^{\jpsi\Kstarz}$. The value of $F_{\rm S}^{\jpsi\Kstarz}$ is obtained from Ref.~\cite{LHCb-JpsiKstar} and is adjusted to the $\mkpi$ range $796<\mkpi<996~\mevcc$. The branching fractions $\BF(\BdToJPsiKstP)$, $\BF(\decay{\jpsi}{\mumu})$ and $\BF(\decay{\KstP}{\Kp\pim})$ are $(1.19\pm0.01\pm0.08)\times10^{-3}$~\cite{belle-z-paper}, $(5.961 \pm 0.033) \times 10^{-2}$~\cite{pdg} and 2/3, respectively. The fraction $f_{\KstP}$ is used to scale the value of $\BF(\BdToJPsiKstP)$ to the correct \mkpi range and is calculated by integrating the $\KstP$ lineshape given in Ref.~\cite{belle-z-paper} over the range $796<\mkpi<996~\mevcc$.
  
-\subsubsection{Efficiencies and yields}
-
-To avoid making any assumption on the unknown angular distribution of the \BdToKpimm decay, the candidate efficiency provided by the acceptance function, described in Sec.~\ref{sec:kpimm:acceptance}, is used to evaluate the average efficiency for both the \BdToJPsiKst candidates and the signal candidates in each \qsq bin.
+\subsubsection{Acceptance corrected yields}
  
-If there were only signal candidates present, the average efficiency would simply be calculated as
-
+To avoid making any assumptions about the unknown distributions of the \BdToKpimm candidates, the event-by-event efficiencies described in Sec.~\ref{sec:kpimm:acceptance} are used to correct the measured yields by calculating the average acceptance weight, where each weight is the reciprocal of the event-by-event efficiency.
+ 
+For the case where there are only signal candidates present, the average weight would simply be calculated as,
+ 
 \begin{equation}
-\overline{\varepsilon} = \frac{1}{N}\sum\limits_{i}^{N}\varepsilon_{i},
+\overline{w} = \frac{1}{N}\sum\limits_{i}^{N}w_{i},
 \label{eqn:average_eff}
 \end{equation}
  
-\noindent where $\varepsilon_{i}$ is the candidate efficiency and $N$ is the number of candidates.  An estimate for the error on the average efficiency would be given by
+\noindent where $w_{i}$ is the event-by-event acceptance and $N$ is the number of candidates.  An estimate for the error on the average weight is given by,
  
 \begin{equation}
-\delta_{\overline{\varepsilon}} = \sqrt{\frac{1}{N(N-1)}\sum\limits_{i}^{N}(\varepsilon_{i}-\overline{\varepsilon})^{2}}.
+\delta_{\overline{w}} = \sqrt{\frac{1}{N(N-1)}\sum\limits_{i}^{N}(w_{i}-\overline{w})^{2}}.
 \end{equation}
  
-\noindent Due to the presence of background, the average efficiency calculated in the signal mass window will be an admixture of the average efficiency for both signal candidates ($\overline{\varepsilon}_{sig}$) and background candidates ($\overline{\varepsilon}_{bkg}$),
+Due to the presence of background, the average weight calculated in the signal mass window will be an admixture of the average weight for both signal candidates ($\overline{w}_{sig}$) and background candidates ($\overline{w}_{bkg}$),
  
 \begin{equation}
-\overline{\varepsilon}_{mix} = \frac{N_{sig}\overline{\varepsilon}_{sig} + N_{bkg}\overline{\varepsilon}_{bkg}}{N_{sig}+N_{bkg}},
+\overline{w}_{mix} = \frac{N_{sig}\overline{w}_{sig} + N_{bkg}\overline{w}_{bkg}}{N_{sig}+N_{bkg}},
 \end{equation}
  
-\noindent where $N_{sig}$ and $N_{bkg}$ are the number of signal and background candidates in the signal mass window, respectively. This can be rearranged to give the average efficiency for the signal candidates,
+\noindent where $N_{sig}$ and $N_{bkg}$ are the number of signal and background events in the signal mass window, respectively. This can be rearranged to give the average weight for the signal candidates,
  
 \begin{equation}
-\overline{\varepsilon}_{sig} = \frac{(N_{sig}+N_{bkg})\overline{\varepsilon}_{mix} -  N_{bkg}\overline{\varepsilon}_{bkg}}{N_{sig}}.
+\overline{w}_{sig} = \frac{(N_{sig}+N_{bkg})\overline{w}_{mix} -  N_{bkg}\overline{w}_{bkg}}{N_{sig}}.
 \end{equation}
  
-\noindent However, what is needed for both the \BdToKpimm and \BdToJPsiKst modes is the ratio $N_{sig}/\overline{\varepsilon}_{sig}$.  This is given by
+However, what is needed for both \BdToKpimm and \BdToJPsiKst is the acceptance corrected yield $\overline{w}_{sig}N_{sig}$.  This is given by,
  
 \begin{equation}
-\frac{N_{sig}}{\overline{\varepsilon}_{sig}} = \frac{N_{sig}^{2}}{(N_{sig}+N_{bkg})\overline{\varepsilon}_{mix} -  N_{bkg}\overline{\varepsilon}_{bkg}},
+\overline{w}_{sig}N_{sig} = (N_{sig}+N_{bkg})\overline{w}_{mix} -  N_{bkg}\overline{w}_{bkg}
 \end{equation}
  
-\noindent where the errors are propagated as
+\noindent where the errors are propagated as,
  
 \begin{equation}
-\begin{aligned}
-\sigma_{N_{sig}/\overline{\varepsilon}_{sig}}^{2} =&
-\left(\frac{N_{sig}^{2}(N_{sig}+N_{bkg})}{((N_{sig}+N_{bkg})\overline{\varepsilon}_{mix} -  N_{bkg}\overline{\varepsilon}_{bkg})^2}\right)^{2}\sigma_{\overline{\varepsilon}_{mix}}^{2}\\
-+& \left(\frac{N_{sig}^{2}N_{bkg}}{((N_{sig}+N_{bkg})\overline{\varepsilon}_{mix} -  N_{bkg}\overline{\varepsilon}_{bkg})^2}\right)^{2}\sigma_{\overline{\varepsilon}_{bkg}}^{2}\\
-+& \left(\frac{N_{sig}^{2}\overline{\varepsilon}_{mix}}{((N_{sig}+N_{bkg})\overline{\varepsilon}_{mix} -  N_{bkg}\overline{\varepsilon}_{bkg})^2} \right. \\
-&\hphantom{-}- \left.  \frac{2N_{sig}}{((N_{sig}+N_{bkg})\overline{\varepsilon}_{mix} -  N_{bkg}\overline{\varepsilon}_{bkg})} \right)^{2}\sigma_{N_{sig}}^{2}\\
-+& \left(\frac{N_{sig}^{2}(\overline{\varepsilon}_{mix} - \overline{\varepsilon}_{bkg})}{((N_{sig}+N_{bkg})\overline{\varepsilon}_{mix} -  N_{bkg}\overline{\varepsilon}_{bkg})^2}\right)^{2}\sigma_{N_{bkg}}^{2}.
-\end{aligned}
+\begin{split}
+\sigma_{\overline{w}_{sig}N_{sig}}^{2} =~ &(N_{sig}+N_{bkg})^{2}\sigma_{\overline{w}_{mix}}^{2} + (-N_{bkg})^{2}\sigma_{\overline{w}_{bkg}}^{2}\\
+&+(\overline{w}_{mix})^{2}\sigma_{N_{sig}}^{2} + (\overline{w}_{mix}-\overline{w}_{bkg})^{2}\sigma_{N_{bkg}}^{2}
+\end{split}
 \end{equation}
  
 The signal region is defined as $5230<\mkpimm<5330$~\mevcc and the background region as $5350<\mkpimm<5700$~\mevcc. For the resonant mode, the background region is altered to $5450<\mkpimm<5700$~\mevcc in order to prevent any potential pollution from \BdToJPsiKst or \BsToJPsiKst candidates.
 
 \subsubsection{Toy studies}
- 
-Toy studies are performed for the extraction of $N_{sig}/\overline{\varepsilon}_{sig}$ with different numbers of signal and background candidates.  In each toy $N_{sig}$ and $N_{bkg}$ are Poisson fluctuated.  The nominal mass models, described in Sec.~\ref{sec:kpimm:massfit}, are used to generate signal and background candidates. The efficiencies for both signal and background are sampled from two gaussian functions with different means.  The pull plots for the extraction of $N_{sig}/\overline{\varepsilon}_{sig}$ are shown in Fig.~\ref{fig:bf:pulls}. No bias is observed.
+
+Toy studies are performed for the extraction of $\overline{w}_{sig}N_{sig}$ with different numbers of signal and background candidates.  In each toy $N_{sig}$, $N_{bkg}$ are Poisson fluctuated.  The nominal mass models, described in Sec.~\ref{sec:kpimm:massfit}, are used to generate signal and background candidates. The weights for both signal and background are sampled from two gaussian functions with different means.  The pulls for the extraction of $\overline{w}_{sig}N_{sig}$ are shown in Fig.~\ref{fig:bf:pulls}. No bias is observed.
  
 \begin{figure}[!tb]
  \centering
@@ -94,13 +90,13 @@ The results for the differential branching fraction are given in Fig.~\ref{fig:b
 \begin{tabular}{lc}
 \qsq [\gevgevcccc] & $\deriv\BF/\deriv\qsq \times 10^{-8}~[c^{4}/\gev^{2}]$ \\
 \hline
-$[0.10,0.98]$ & 1.48 $\pm$ 0.23 $\pm$ 0.03 $\pm$ 0.10 \\
-$[1.10,2.50]$ & 1.13 $\pm$ 0.18 $\pm$ 0.02 $\pm$ 0.08 \\
-$[2.50,4.00]$ & 0.94 $\pm$ 0.16 $\pm$ 0.03 $\pm$ 0.06 \\
-$[4.00,6.00]$ & 0.61 $\pm$ 0.12 $\pm$ 0.02 $\pm$ 0.04 \\
-$[6.00,8.00]$ & 0.49 $\pm$ 0.12 $\pm$ 0.01 $\pm$ 0.03 \\
+$[0.10,0.98]$ & 1.60 $\pm$ 0.28 $\pm$ 0.04 $\pm$ 0.11 \\
+$[1.10,2.50]$ & 1.14 $\pm$ 0.19 $\pm$ 0.03 $\pm$ 0.08 \\
+$[2.50,4.00]$ & 0.91 $\pm$ 0.16 $\pm$ 0.03 $\pm$ 0.06 \\
+$[4.00,6.00]$ & 0.56 $\pm$ 0.12 $\pm$ 0.02 $\pm$ 0.04 \\
+$[6.00,8.00]$ & 0.49 $\pm$ 0.11 $\pm$ 0.01 $\pm$ 0.03 \\
 \hline
-$[1.10,6.00]$ & 0.84 $\pm$ 0.08 $\pm$ 0.02 $\pm$ 0.06 \\
+$[1.10,6.00]$ & 0.82 $\pm$ 0.09 $\pm$ 0.02 $\pm$ 0.06 \\
 \end{tabular}
 \end{center}
 \end{table}
