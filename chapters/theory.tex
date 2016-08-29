@@ -5,31 +5,11 @@
 
 The Standard Model (SM) of particle physics incorporates the Glashow-Weinberg-Salam theory of the electroweak interaction and quantum chromodynamics. It describes our current understanding of elementary particles and their interactions. While this section briefly describes the most relevant aspects of the SM for this thesis, a more complete description can be found in~\cite{griffiths,halzen}.
 
-\subsubsection{Constituents of the SM}
+\subsubsection{Overview of the SM}
 
-Elementary particles can be divided into two categories: fermions, with half integer spin, and bosons, with integer spin. The SM fermions consist of quarks and leptons and are often referred to as matter. The bosons mediate the fundamental interactions between the fermions and amongst themselves. In the SM, this corresponds to the electromagnetic, the strong and the weak forces. The properties of each of these bosons are shown in Table~\ref{tab:bosons}. Gravity, the weakest of the four fundamental forces, is not included in the SM.
+Elementary particles can be divided into two categories: fermions, with half integer spin, and bosons, with integer spin. The SM fermions consist of quarks and leptons and are often referred to as matter. The properties of each of the SM fermions are shown in Table~\ref{tab:fermions}. The bosons mediate the fundamental interactions between the fermions and amongst themselves. 
 
 \begin{table}[!b]
-\caption{The fundamental interactions of the SM, their corresponding bosons and their typical coupling.}
-\begin{center}
-\begin{tabular}{lll}
-Force & Boson & Typical coupling $\alpha_{i}$ \\
-\hline
-Strong & $g$ & 1 \\
-Electromagnetic & \g & 10$^{-2}$ \\
-Weak &  \Z, \Wpm & 10$^{-6}$ \\
-\end{tabular}
-\end{center}
-\label{tab:bosons}
-\end{table}
-
-Quarks and leptons are grouped into three generations of increasing mass
-\begin{equation}
-{\rm quarks}: \binom{\uquark}{\dquark},~\binom{\cquark}{\squark},~\binom{\tquark}{\bquark} ~~~ {\rm leptons}: \binom{\neue}{\electron},~\binom{\neum}{\mu},~\binom{\neut}{\tau}. \nonumber
-\end{equation}  
-\noindent Quarks come in six `flavours': up, down, charm, strange, top and bottom. For leptons, each generation contains a charged lepton and a neutrino. There are three different flavours of lepton: electron, muon and tau. The properties of each of the SM fermions are shown in Table~\ref{tab:fermions}. Each fermion has a corresponding antiparticle with equal mass and lifetime but opposite charge and internal quantum numbers.
-
-\begin{table}[!tb]
 \def\arraystretch{1.1}
 \caption{Properties of the quarks and leptons in the SM. The particle masses are taken from~\cite{pdg}.}
 \begin{center}
@@ -62,15 +42,41 @@ Flavour & Mass~[\mevcc] & Charge \\
 \label{tab:fermions}
 \end{table}
 
-The electromagnetic force is mediated by the photon, and acts on all charged particles. As photons are electrically neutral they do not interact with each other.
+%The SM is formulated as a Quantum Field Theory (QFT) and is described by a \mbox{$\rm SU(3)_{C} \times SU(2)_{L} \times U(1)_{Y}$} gauge symmetry.
 
-Quarks carry a type of charge called `colour' which comes in three types: red, green and blue. As such, they are able to participate in the strong interaction, which is also referred to as quantum chromodynamics (QCD). Antiquarks carry anticolour (antired, antiblue, antigreen), while gluons are bicoloured and carry one positive unit of colour and one negative unit. Therefore, a quark can change colour by exchanging a gluon with another quark. Unlike photons, gluons can undergo self interaction. 
+%In the SM, this corresponds to the electromagnetic, the strong and the weak forces. The properties of each of these bosons are shown in Table~\ref{tab:bosons}. Gravity, the weakest of the four fundamental forces, is not included in the SM.
 
-As QCD only allows colourless objects, quarks are confined within bound states called hadrons. There are two types of hadrons: baryons, containing three quarks each with a different colour, and mesons, containing a quark and an antiquark with opposite colour. The main focus of this thesis is the study of \B mesons which contain either a \bquark quark or a \bquarkbar antiquark.
+% \begin{table}[!b]
+% \caption{The fundamental interactions of the SM, their corresponding bosons and their typical coupling.}
+% \begin{center}
+% \begin{tabular}{lll}
+% Force & Boson & Typical coupling $\alpha_{i}$ \\
+% \hline
+% Strong & $g$ & 1 \\
+% Electromagnetic & \g & 10$^{-2}$ \\
+% Weak &  \Z, \Wpm & 10$^{-6}$ \\
+% \end{tabular}
+% \end{center}
+% \label{tab:bosons}
+% \end{table}
 
-The weak force is mediated by the massive \Wpm and \Z bosons and acts on all fermions. Like the electromagnetic and strong interactions the neutral weak current, which involves the exchange of a \Z boson, is flavour conserving. However, the charged weak current, which involves the exchange of a \Wpm boson, changes the flavour of a quark from an up-type to a down-type and vice versa.
+% Quarks and leptons are grouped into three generations of increasing mass
+% \begin{equation}
+% {\rm quarks}: \binom{\uquark}{\dquark},~\binom{\cquark}{\squark},~\binom{\tquark}{\bquark} ~~~ {\rm leptons}: \binom{\neue}{\electron},~\binom{\neum}{\mu},~\binom{\neut}{\tau}. \nonumber
+% \end{equation}  
+% \noindent Quarks come in six `flavours': up, down, charm, strange, top and bottom. For leptons, each generation contains a charged lepton and a neutrino. There are three different flavours of lepton: electron, muon and tau. The properties of each of the SM fermions are shown in Table~\ref{tab:fermions}. Each fermion has a corresponding antiparticle with equal mass and lifetime but opposite charge and internal quantum numbers.
 
-The Higgs boson, \H, is a scalar particle that results from the mechanism of electroweak symmetry breaking, through which the \Wpm and \Z are given a mass due to the non zero vacuum expectation value of the Higgs field. It was the final particle of the SM to be discovered when it was confirmed in 2012~\cite{higgs-atlas,higgs-cms}. The quarks and leptons also obtain their masses via interactions with the Higgs field. 
+
+
+% The electromagnetic force is mediated by the photon, and acts on all charged particles. As photons are electrically neutral they do not interact with each other.
+
+% Quarks carry a type of charge called `colour' which comes in three types: red, green and blue. As such, they are able to participate in the strong interaction, which is also referred to as quantum chromodynamics (QCD). Antiquarks carry anticolour (antired, antiblue, antigreen), while gluons are bicoloured and carry one positive unit of colour and one negative unit. Therefore, a quark can change colour by exchanging a gluon with another quark. Unlike photons, gluons can undergo self interaction. 
+
+% As QCD only allows colourless objects, quarks are confined within bound states called hadrons. There are two types of hadrons: baryons, containing three quarks each with a different colour, and mesons, containing a quark and an antiquark with opposite colour. The main focus of this thesis is the study of \B mesons which contain either a \bquark quark or a \bquarkbar antiquark.
+
+% The weak force is mediated by the massive \Wpm and \Z bosons and acts on all fermions. Like the electromagnetic and strong interactions the neutral weak current, which involves the exchange of a \Z boson, is flavour conserving. However, the charged weak current, which involves the exchange of a \Wpm boson, changes the flavour of a quark from an up-type to a down-type and vice versa.
+
+% The Higgs boson, \H, is a scalar particle that results from the mechanism of electroweak symmetry breaking, through which the \Wpm and \Z are given a mass due to the non zero vacuum expectation value of the Higgs field. It was the final particle of the SM to be discovered when it was confirmed in 2012~\cite{higgs-atlas,higgs-cms}. The quarks and leptons also obtain their masses via interactions with the Higgs field. 
 
 \subsubsection{Flavour violation in the SM}
 
@@ -136,22 +142,22 @@ Even before the discovery of the \cquark quark, Kobayaski and Maskawa~\cite{koba
 
 \subsection{Beyond the SM}
 
-Despite the considerable success of the SM it is not without its limitations, some of which are outlined below
+Despite its considerable success in predicting cross sections and branching ratios of particles with great accuracy, the SM it is not without its limitations, some of which are outlined below
 
 \begin{itemize}
-  \item Gravity, the fourth fundamental force, is not incorporated in the SM.
+  \item Gravity, the fourth fundamental force, is not incorporated in the SM. However, this is not specific to the SM as there is no consensus on how to include gravity in a QFT. 
   \item The SM has a large number of free parameters many of which relate to the flavour sector: the 9 fermion masses, the four parameters of the CKM matrix and a \CP violating phase in the strong sector.
-  \item Dark matter and dark energy, which make up 95\% of the mass of the Universe, are not accounted for in the SM.
-  \item The amount of \CP violation predicted by the SM is ten orders of magnitude lower than what is needed to account for the observed matter-antimatter asymmetry in the Universe.
+  \item Dark matter, which is believed to be five times as abundant as ordinary matter, is not accounted for in the SM.
+  \item The amount of \CP violation predicted by the SM is ten orders of magnitude lower than what is needed to account for the observed matter-antimatter asymmetry in the Universe, assuming matter and antimatter were created in equal amounts in the Big Bang.
 \end{itemize}
 
 \noindent These limitations have led physicists to look for extensions to the SM in the form of New Physics (NP) models. Such NP models often predict new particles that may contribute to, and therefore modify, flavour-changing processes in the SM.
 
 \subsection{Rare decays of \B mesons}
 
-Flavour-changing neutral current (FCNC) transitions are forbidden at tree level in the SM. They are rare processes that occur at loop level, making them an ideal place to perform a search for NP. Rare decays of \B mesons, such as those containing a \btosll transition, can have sizeable NP contributions that are not swamped by the competing SM process. 
+Flavour-changing neutral current (FCNC) transitions are forbidden at tree level in the SM. They are rare processes that occur via loop and box diagrams, making them an ideal place to perform a search for NP. Rare decays of \B mesons, such as those containing a \btosll transition, can have sizeable NP contributions that are not swamped by the competing SM process. 
 
-By studying the properties of FCNC processes it is possible to perform model independent searches sensitive to a wide range of NP models. Feyman diagrams for the \btosll transition, both in the SM and in proposed NP models~\cite{bstoll-higgs,bstoll-zprime}, are shown Fig.~\ref{fig:btosll}. New particles can modify the dynamics of a decay: changing the branching fraction or the kinematic distribution of the final state particles. By comparing the SM prediction of observables with experimental measurements, the flavour structure of NP models can be probed. The theoretical framework in which flavour physics measurements are intepreted is known as Operator Product Expansion (OPE)~\cite{ope}.
+By studying the properties of FCNC processes it is possible to perform model independent searches sensitive to a wide range of NP models. Feyman diagrams for the \btosll transition, both in the SM and in possible NP scenarios~\cite{bstoll-higgs,bstoll-zprime}, are shown Fig.~\ref{fig:btosll}. New particles can modify the dynamics of a decay: changing the branching fraction or the kinematic distribution of the final state particles. By comparing the SM prediction of observables with experimental measurements, the flavour structure of NP models can be probed. The theoretical framework used to to interpret flavour physics measurements in a model independent way is the so-called Operator Product Expansion.~\cite{ope}.
 
 \begin{figure}[!tb]
 \centering
@@ -238,15 +244,17 @@ In the SM, the effective Hamiltonian describing \btosll decays can be written as
 \mathcal{H}_{\rm eff} = - \frac{4G_{F}}{\sqrt{2}}V_{tb}V^{*}_{ts}\sum_{i}[\mathcal{C}_{i}(\mu)\mathcal{O}_{i}(\mu) + \mathcal{C}^{'}_{i}(\mu)\mathcal{O}^{'}_{i}(\mu)].
 \end{equation}
 
-\noindent where $G_{F}$ is the Fermi constant, and $V_{ij}$ are CKM matrix elements. The complex Wilson coefficients, $\mathcal{C}_{i}$, incorporate the short distance (high energy) contributions. For each Wilson coefficient, there is a local operator $\mathcal{O}_{i}$ which incorporates the long distance (low energy) contributions. The primed operators represent the right-handed currents, which are highly suppressed in the SM. The advantage of the OPE approach is that the Wilson coefficients are independent of the underlying process and can include contributions from NP contributions. 
+\noindent where $G_{F}$ is the Fermi constant, and $V_{ij}$ are CKM matrix elements. The complex Wilson coefficients, $\mathcal{C}_{i}$, incorporate the short distance (high energy) contributions. For each Wilson coefficient, there is a local operator $\mathcal{O}_{i}$ which incorporates the long distance (low energy) contributions. The primed operators represent the right-handed currents, which are highly suppressed in the SM. The advantage of the OPE approach is that the Wilson coefficients are independent of the underlying process and can include contributions from NP. 
 
 For \btosll decays, the dominant contributions in the SM arise from the following operators~\cite{operators}
 
 \begin{alignat}{2}
 &\order_{7} = \frac{e}{g^{2}}m_{\bquark}(\squarkbar\sigma_{\mu\nu}P_{R}\bquark)F^{\mu\nu},~~~~~&&\order_{7}^{\prime} = \frac{e}{g^{2}}m_{\bquark}(\squarkbar\sigma_{\mu\nu}P_{L}\bquark)F^{\mu\nu}, \nonumber \\
-&\order_{9} = \frac{e^{2}}{g^{2}}(\squarkbar\gamma_{\mu}P_{L}\bquark)(\ellbar\gamma^{\mu}\ell), &&\order_{9}^{\prime} = \frac{e^{2}}{g^{2}}(\squarkbar\gamma_{\mu}P_{R}\bquark)(\ellbar\gamma^{\mu}\ell),\\
-&\order_{10} = \frac{e^{2}}{g^{2}}(\squarkbar\gamma_{\mu}P_{L}\bquark)(\ellbar\gamma^{\mu}\gamma_{5}\ell), &&\order_{10}^{\prime} = \frac{e^{2}}{g^{2}}(\squarkbar\gamma_{\mu}P_{R}\bquark)(\ellbar\gamma^{\mu}\gamma_{5}\ell), \nonumber
+&\order_{9} = \frac{e^{2}}{g^{2}}(\squarkbar\gamma_{\mu}P_{L}\bquark)(\ellbar\gamma^{\mu}\ell), &&\order_{9}^{\prime} = \frac{e^{2}}{g^{2}}(\squarkbar\gamma_{\mu}P_{R}\bquark)(\ellbar\gamma^{\mu}\ell), \nonumber \\
+&\order_{10} = \frac{e^{2}}{g^{2}}(\squarkbar\gamma_{\mu}P_{L}\bquark)(\ellbar\gamma^{\mu}\gamma_{5}\ell), &&\order_{10}^{\prime} = \frac{e^{2}}{g^{2}}(\squarkbar\gamma_{\mu}P_{R}\bquark)(\ellbar\gamma^{\mu}\gamma_{5}\ell), \\
+&\order_{S} = \frac{e^{2}}{16\pi^{2}}m_{\bquark}(\squarkbar P_{R}\bquark)(\ellbar\ell), &&\order_{S}^{\prime} = \frac{e^{2}}{16\pi^{2}}m_{\bquark}(\squarkbar P_{L}\bquark)(\ellbar\ell), \nonumber\\
+&\order_{P} = \frac{e^{2}}{16\pi^{2}}m_{\bquark}(\squarkbar P_{R}\bquark)(\ellbar\gamma_{5}\ell), &&\order_{P}^{\prime} = \frac{e^{2}}{16\pi^{2}}m_{\bquark}(\squarkbar P_{L}\bquark)(\ellbar\gamma_{5}\ell), \nonumber
 \end{alignat}
 
-\noindent where $P_{L/R} = (1\mp\gamma_{5})/2$ are the left- and right-handed projection operators. The operator $\order_{7}$ is the electromagnetic operator corresponding to the emission of a photon. The vector and axial-vector operators, $\order_{9}$ and $\order_{10}$, describe the $Z$ penguin and $W$ box diagrams.
+\noindent where $P_{L/R} = (1\mp\gamma_{5})/2$ are the left- and right-handed projection operators. The operator $\order_{7}$ is the electromagnetic operator corresponding to the emission of a photon. The vector and axial-vector operators, $\order_{9}$ and $\order_{10}$, describe the $Z$ penguin and $W$ box diagrams. The operators $\order_{S}$ and $\order_{P}$ represent scalar and pseudoscalar operators.
 
