@@ -184,24 +184,26 @@ The results of the pull studies described in Sec.~\ref{sec:kpimm:angular-analysi
 \section{Peaking background systematic}
 \label{sec:appendix:kernel}
 
-The effect of residual peaking background contributions is evaluated using pseudoexperiments where peaking background components are generated in addition to the signal and the combinatorial background. The peaking background candidates are first selected from data by isolating the decays using specific selections. In the following section, the method for extracting and generating the angular distributions of peaking background candidates is shown explicity for the case of \BdToJPsiKpi decays with a $\pi\leftrightarrow\mu$ swap. 
+The effect of residual peaking background contributions is evaluated using pseudoexperiments where peaking background components are generated in addition to the signal and the combinatorial background. The peaking background candidates are first selected from data by isolating the decays using specific selections. In the following section, the method is shown explicity for the case of \BdToJPsiKpi decays with a $\pi\leftrightarrow\mu$ swap. 
 
 As described in Sec.~\ref{sec:selection:exclusive}, candidates from \BdToJPsiKpi decays can contribute a background if the \pim (\Kp) is misidentified as a \mun (\mup) and the \mun (\mup) is misidentified as a \pim (\Kp).  For the case of $\mun \leftrightarrow \pim$ swaps, the invariant mass of the \pim and the \mup, after assigning the \pim the \muon mass hypothesis, should be consistent with the known \jpsi mass. This new mass hypothesis is denoted $m_{(\pi\to\mu)\mu}$.
 
-Candidates are selected by requiring the $m_{(\pi\to\mu)\mu}$ invariant mass to be within $\pm200$\mevcc of the known \jpsi mass~\cite{pdg}. The $m_{(\pi\to\mu)\mu}$ distribution is fitted using a Gaussian to model the \BdToJPsiKpi contribution and a second order Chebyshev polynomial to model the non-resonant contribution, as shown in Fig.~\ref{fig:appendix::kernel:massfit}. From the result of the fit, sWeights are determined in order to be able to perform a background subtraction.
+Candidates are selected from data by requiring the $m_{(\pi\to\mu)\mu}$ invariant mass to be within $\pm200$\mevcc of the known \jpsi mass. The $m_{(\pi\to\mu)\mu}$ distribution is fitted using a Gaussian to model the \BdToJPsiKpi contribution and a second order Chebyshev polynomial to model the non-resonant contribution, as shown in Fig.~\ref{fig:appendix::kernel:massfit}. From the result of the fit, sWeights are determined in order to be able to isolate the \BdToJPsiKpi contribution.
 
-\begin{figure}[!hb]
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.6\textwidth]{figs/kpimm/selection/jpsi_pimu_fit.pdf}
-\caption{Invariant mass distribution for \BdToJPsiKpi candidates with a $\pi\leftrightarrow\mu$ swap.}
+\caption{The $m_{(\pi\to\mu)\mu}$ distribution for \BdToJPsiKpi candidates with a $\pi\leftrightarrow\mu$ swap.}
 \label{fig:appendix::kernel:massfit}
 \end{figure}
 
-\begin{figure}[!hb]
+The distributions of the decay angles for \BdToJPsiKpi decays with a $\pi\leftrightarrow\mu$ swap are shown in Fig.~\ref{fig:appendix::kernel:angles}. A kernel estimator~\cite{kernel} is used to model the distributions, as shown by the blue histogram in Fig.~\ref{fig:appendix::kernel:angles}. The resulting probability density function is used to generate the peaking background contributions for the pseudoexperiments.
+
+\begin{figure}[!tb]
 \centering
 \includegraphics[width=0.45\textwidth]{figs/kpimm/selection/jpsi_pimu_costhetal.pdf}
 \includegraphics[width=0.45\textwidth]{figs/kpimm/selection/jpsi_pimu_costhetak.pdf}
 \includegraphics[width=0.45\textwidth]{figs/kpimm/selection/jpsi_pimu_phi.pdf}
-\caption{Distributions of each of the decay angles for \BdToJPsiKpi decays with a $\pi\leftrightarrow\mu$ swap. The distributions derived from the kernel density method are shown by the blue histograms.}
+\caption{Distributions of each of the decay angles for \BdToJPsiKpi decays with a $\pi\leftrightarrow\mu$ swap. The distributions derived from the kernel estimator are shown by the blue histograms.}
 \label{fig:appendix::kernel:angles}
 \end{figure}
