@@ -1,25 +1,25 @@
-\section{Upstream tracking for \lhcb Run II}
+\section{Upstream tracking for \lhcb Run 2}
 \label{sec:up-track-run2}
 
 \subsection{Motivation}
 
-Following the improved performance achieved using \velout tracks within the tracking sequence of the \lhcb Upgrade, outlined in Sec.~\ref{sec:up-track-upgrade}, a similar strategy was developed for \lhcb Run II. This strategy involved using \velott tracks as input for the Forward tracking at the first stage of the software trigger. A new \velott algorithm for Run II~\cite{velott} was created based on the optimised \velout algorithm, taking into account the slight differences in geometry between the two sub-detectors. In the following chapter, the improved performance of the \velott algorithm for Run II compared to Run I will be shown along with the improved performance achieved when using \velott tracks rather than \velo tracks as input to the Forward tracking algorithm.
+Following the improved performance achieved using \velout tracks within the tracking sequence of the \lhcb Upgrade, outlined in Sec.~\ref{sec:up-track-upgrade}, a similar strategy was developed for \lhcb Run 2. This strategy involved using \velott tracks as input for the Forward tracking at the first stage of the software trigger. A new \velott algorithm for Run 2~\cite{velott} was created based on the optimised \velout algorithm, taking into account the slight differences in geometry between the two sub-detectors. In the following chapter, the improved performance of the \velott algorithm for Run 2 compared to Run 1 will be shown along with the improved performance achieved when using \velott tracks rather than \velo tracks as input to the Forward tracking algorithm.
 
 \subsection{Performance}
 
 \subsubsection{VeloTT}
 
-The track reconstruction efficiency, ghost rate and execution time of the VeloTT algorithm for Run I and Run II are shown in Table~\ref{tab:perf_velott_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_velott_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_velott_comp}. The Run II implementation shows large improvements in terms of track reconstruction efficiency and execution time. The increased track reconstruction efficiency is most evident at high \ptot as the Run I implementation shows a negative trend for increasing \ptot. There is also a slight increase in the ghost rate. However, this is of lesser importance as the ghost rate can be further reduced during offline analysis. 
+The track reconstruction efficiency, ghost rate and execution time of the VeloTT algorithm for Run 1 and Run 2 are shown in Table~\ref{tab:perf_velott_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_velott_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_velott_comp}. The Run 2 implementation shows large improvements in terms of track reconstruction efficiency and execution time. The increased track reconstruction efficiency is most evident at high \ptot as the Run 1 implementation shows a negative trend for increasing \ptot. There is also a slight increase in the ghost rate. However, this is of lesser importance as the ghost rate can be further reduced during offline analysis. 
 
 \begin{table}[!b]
-\caption{The performances of the VeloTT algorithms for Run I and Run II in terms of track reconstruction efficiency, ghost rate and execution time.}
+\caption{The performances of the VeloTT algorithms for Run 1 and Run 2 in terms of track reconstruction efficiency, ghost rate and execution time.}
 \label{tab:perf_velott_comp}
 \begin{center}
   \begin{tabular}{c|c|c|c}
     VeloTT & Efficiency [\%] & Ghost rate [\%] & Timing [ms] \\ 
     \hline
-    Run I  &  92.74  &  \hphantom{0}7.21  &  32.50  \\ 
-    Run II  &  97.77  &  11.60  &  \hphantom{0}0.50   \\ 
+    Run 1  &  92.74  &  \hphantom{0}7.21  &  32.50  \\ 
+    Run 2  &  97.77  &  11.60  &  \hphantom{0}0.50   \\ 
   \end{tabular}
 \end{center}
 \end{table}
@@ -28,7 +28,7 @@ The track reconstruction efficiency, ghost rate and execution time of the VeloTT
 \begin{center}
   \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/VeloTT-eff-p.pdf}
   \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/VeloTT-eff-pt.pdf}
-  \caption{The track reconstruction efficiency of the VeloTT algorithms for Run I and Run II as a function of \ptot and \pt.}
+  \caption{The track reconstruction efficiency of the VeloTT algorithms for Run 1 and Run 2 as a function of \ptot and \pt.}
   \label{fig:eff_velott_comp}
   \end{center}
 \end{figure}
@@ -37,14 +37,14 @@ The track reconstruction efficiency, ghost rate and execution time of the VeloTT
   \begin{center}
     \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/VeloTT-gr-p.pdf}
     \includegraphics[width=0.45\linewidth]{figs/upstream-tracking-run2/VeloTT-gr-pt.pdf}
-    \caption{The ghost rate of the VeloTT algorithms for Run I and Run II as a function of \ptot and \pt.}
+    \caption{The ghost rate of the VeloTT algorithms for Run 1 and Run 2 as a function of \ptot and \pt.}
     \label{fig:gr_velott_comp}
   \end{center}
 \end{figure}
 
 \subsubsection{Forward}
 
-The track reconstruction efficiency, ghost rate and execution time of the Forward algorithm taking \velo or VeloTT tracks as input are shown in Table~\ref{tab:perf_forward_run2_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_forward_run2_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_forward_run2_comp}. The use of VeloTT tracks as input drastically reduces the ghost rate and execution time of the Forward algorithm. This comes at a small cost in the track reconstruction efficiency. This efficiency is retrieved at the second stage of the software trigger~\cite{hlt-runII}.
+The track reconstruction efficiency, ghost rate and execution time of the Forward algorithm taking \velo or VeloTT tracks as input are shown in Table~\ref{tab:perf_forward_run2_comp}. The track reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_forward_run2_comp}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_forward_run2_comp}. The use of VeloTT tracks as input drastically reduces the ghost rate and execution time of the Forward algorithm. This comes at a small cost in the track reconstruction efficiency. This efficiency is retrieved at the second stage of the software trigger~\cite{hlt-run2}.
 
 \begin{table}[!tb]
   \caption{The performances of the Forward algorithm using \velo or VeloTT tracks as input in terms of track reconstruction efficiency, ghost rate and execution time.}
@@ -80,4 +80,4 @@ The track reconstruction efficiency, ghost rate and execution time of the Forwar
 \subsection{Summary}
 \label{sec:up-track-run2:summary}
 
-The enhanced performance achieved when using VeloTT tracks as input to the Forward tracking led to the algorithm being included in the reconstruction sequence at the first stage of the software trigger for Run II. The significantly improved execution time makes it possible to remove any IP requirement on \velo tracks and to loosen the \pt threshold of the Forward tracking from 1.2\gevc to 0.5\gevc in the first stage of the software trigger. This greatly improves the signal efficiency for charm physics and allows lifetime unbiased triggers for hadronic final states for the first time~\cite{hlt-runII}. It also plays an important role in allowing physics analyses to be performed directly on the output of the software trigger, as described in Sec~\ref{sec:lhcb:lhcb-run2}.
+The enhanced performance achieved when using VeloTT tracks as input to the Forward tracking led to the algorithm being included in the reconstruction sequence at the first stage of the software trigger for Run 2. The significantly improved execution time makes it possible to remove any IP requirement on \velo tracks and to loosen the \pt threshold of the Forward tracking from 1.2\gevc to 0.5\gevc in the first stage of the software trigger. This greatly improves the signal efficiency for charm physics and allows lifetime unbiased triggers for hadronic final states for the first time~\cite{hlt-run2}. It also plays an important role in allowing physics analyses to be performed directly on the output of the software trigger, as described in Sec~\ref{sec:lhcb:lhcb-run2}.

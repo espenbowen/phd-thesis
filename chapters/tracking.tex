@@ -1,7 +1,7 @@
 \section{Track reconstruction}
 \label{sec:track}
 
-The track reconstruction in \lhcb is performed by several different algorithms~\cite{tracking}. In order to describe the process, it is first necessary to introduce the notion of track types and track states which are described in Sec.~\ref{sec:track:track-types} and Sec.~\ref{sec:track:track-states} respectively. Each of the tracking algorithms used in Run I are described in detail in Sec.~\ref{sec:track:algos} with special emphasis given to the upstream tracking algorithm. The duplicate track removal and track fit procedures are described in Sec.~\ref{sec:track:clone} and Sec.~\ref{sec:track:fit} respectively. Finally, the methods used to determine the performance of the track reconstruction using simulation are detailed in Sec.~\ref{sec:track:performance}.
+The track reconstruction in \lhcb is performed by several different algorithms~\cite{tracking}. In order to describe the process, it is first necessary to introduce the notion of track types and track states which are described in Sec.~\ref{sec:track:track-types} and Sec.~\ref{sec:track:track-states} respectively. Each of the tracking algorithms used in Run 1 are described in detail in Sec.~\ref{sec:track:algos} with special emphasis given to the upstream tracking algorithm. The duplicate track removal and track fit procedures are described in Sec.~\ref{sec:track:clone} and Sec.~\ref{sec:track:fit} respectively. Finally, the methods used to determine the performance of the track reconstruction using simulation are detailed in Sec.~\ref{sec:track:performance}.
 
 \subsection{Track types}
 \label{sec:track:track-types}
@@ -122,15 +122,15 @@ Track candidates can be considered as a collection of track states (initially pr
 \subsection{Tracking performance}
 \label{sec:track:performance}
 
-The figures of merit used to evaluate the performance of tracking algorithms are the reconstruction efficiency, ghost rate and execution time and are determined using simulated events. The simulated samples used in the following sections to benchmark the performance of the upstream tracking algorithms for both the \lhcb Upgrade and \lhcb Run II are shown in Table~\ref{tab:track-mc-samples}.
+The figures of merit used to evaluate the performance of tracking algorithms are the reconstruction efficiency, ghost rate and execution time and are determined using simulated events. The simulated samples used in the following sections to benchmark the performance of the upstream tracking algorithms for both the \lhcb Upgrade and \lhcb Run 2 are shown in Table~\ref{tab:track-mc-samples}.
 
 \begin{table}[!tb]
-\caption{The simulated samples used in the following sections to benchmark the performance of the upstream tracking algorithms for both the \lhcb Upgrade and \lhcb Run II.}
+\caption{The simulated samples used in the following sections to benchmark the performance of the upstream tracking algorithms for both the \lhcb Upgrade and \lhcb Run 2.}
 \begin{center}
 \begin{tabular}{c|c|c|c|c}
   & Decay Mode & $\sqrt{s}$~[\tev] & $\nu$ & Bunch spacing~[\ns] \\ 
   \hline
-  Run II & \BsToPhiPhi, min. bias & 13 & 1.9 & 25 \\
+  Run 2 & \BsToPhiPhi, min. bias & 13 & 1.9 & 25 \\
   Upgrade & \BdToKstmm, min. bias & 14 & 7.6 & 25 \\
   \end{tabular}
 \end{center}
