@@ -28,6 +28,11 @@
 \usepackage{pifont}
 \renewcommand{\labelitemi}{\ding{70}}
 
+% Allow the page size to vary a bit ...
+\raggedbottom
+% To avoid Latex to be too fussy with line breaking ...
+\sloppy
+
 % \usepackage{fancyhdr}
 % \pagestyle{fancy}
 % \fancyhf{}
@@ -48,16 +53,10 @@
     linkcolor=denim,
     urlcolor=black
 }
-
-%biber
-\usepackage[
-    backend=biber,
-    style=numeric-comp,
-    sorting=none,
-    url=false,
-    eprint=false,
-]{biblatex}
-\addbibresource{thesis.bib}
+\usepackage{ifthen}
+\usepackage{mciteplus}
+\newboolean{articletitles}
+\setboolean{articletitles}{true}
 
 %LHCb symbols
 \input{lhcb-symbols-def}
@@ -104,6 +103,9 @@
 \input{chapters/kpimm/kpimm}
 \clearpage
 \input{chapters/appendix}
+
 \clearpage
-\printbibliography[heading=bibintoc,title={Bibliography}]
+\bibliographystyle{LHCb}
+\renewcommand{\refname}{Bibliography}
+\bibliography{thesis,LHCb-PAPER,LHCb-DP,LHCb-TDR}
 \end{document}
