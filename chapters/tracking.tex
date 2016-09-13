@@ -1,4 +1,4 @@
-\section{Track reconstruction}
+\section{Track reconstruction in Run 1}
 \label{sec:track}
 
 The track reconstruction in \lhcb is performed by several different algorithms~\cite{tracking}. In order to describe the process, it is first necessary to introduce the notion of track types and track states which are described in Sec.~\ref{sec:track:track-types} and Sec.~\ref{sec:track:track-states} respectively. Each of the tracking algorithms used in Run 1 are described in detail in Sec.~\ref{sec:track:algos} with special emphasis given to the upstream tracking algorithm. The duplicate track removal and track fit procedures are described in Sec.~\ref{sec:track:clone} and Sec.~\ref{sec:track:fit} respectively. Finally, the methods used to determine the performance of the track reconstruction using simulation are detailed in Sec.~\ref{sec:track:performance}.
@@ -161,7 +161,7 @@ When calculating the efficiency of the \velott (\velout) algorithm itself, parti
 
 When considering the effect of using \velott (\velout) tracks as input to the Forward algorithm, no requirement is made that the particle has associated TT (UT) hits or has been correctly reconstructed in the \velo. Therefore, any inefficiency contains contributions from both the \velott (\velout) algorithm and the acceptance of the TT (UT) detector. 
 
-In this thesis, further requirements are made to both the numerator and the denominator:
+Further requirements are made to both the numerator and the denominator:
 
 \begin{itemize}
 \item The particle is required not to be an electron.
