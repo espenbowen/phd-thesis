@@ -1,29 +1,29 @@
 \subsection{Angular moments analysis}
 \label{sec:kpimm:angular-analysis}
 
-The angular observables described in Sec.~\ref{sec:kpimm:angular-distribution} are determined using a moments analysis of the angular distribution, as outlined in Ref.~\cite{biplab}. An angular moments analysis is preferred to an angular fit due to the complicated angular expression. The moments technique allows a robust measurement of the observables even with the small dataset available whereas a likelihood fit would not converge nor have good coverage properties.
+The angular observables defined in Sec.~\ref{sec:kpimm:angular-distribution} are determined using a moments analysis of the angular distribution, as outlined in Ref.~\cite{biplab}. This approach has the advantage of producing stable measurements with well-defined uncertainties even for small data samples.
 
 The 41 background-subtracted and acceptance-corrected moments are estimated as
 \begin{equation}
  \label{eqn:moments}
-\Gamma_i =  \sum_{k=1}^{n_{\rm sig}} w_{k}f_i(\Omega_k)  - x\sum_{k=1}^{n_{\rm bkg}} w_{k}f_i(\Omega_k),\\
+\Gamma_i =  \sum_{k=1}^{n_{\rm sig}} w_{k}f_i(\Omega_k)  - x\sum_{k=1}^{n_{\rm bkg}} w_{k}f_i(\Omega_k)\\
 \end{equation}
 
-\noindent while the corresponding covariance matrix is estimated as
+\noindent and the corresponding covariance matrix is estimated as
 
 \begin{equation}
  \label{eqn:covariance}
  C_{ij} = \sum_{k=1}^{n_{\rm sig}} w^{2}_{k}f_i(\Omega_k)f_j(\Omega_k)   + x^2\sum_{k=1}^{n_{\rm bkg}} w^{2}_{k}f_i(\Omega_k)f_j(\Omega_k).
 \end{equation}
 
-\noindent Here $n_{\rm sig}$ and $n_{\rm bkg}$ correspond to the candidates in the signal and background regions, respectively. The signal region is defined within $\pm 50\mevcc$ of the \Bz mass, and the background region in the range $5350<\mkpimm<5700$~\mevcc. The scale-factor $x$ is the ratio of the estimated number of background candidates in the signal region, $\tilde{n}^{\rm bkg}_{\rm sig}$, over the number of candidates in the background region, $n_{\rm bkg}$, and is used for the background subtraction.
-It has been checked in data that the angular distribution of the background is independent of \mkpimm within the precision of this measurement, and that the uncertainty of $x$ has negligible impact on the results.
-The weights, $w_{k}$, are the reciprocal of the candidate's efficiency and account for the acceptance, described in Sec.~\ref{sec:kpimm:acceptance}.
+\noindent Here $n_{\rm sig}$ and $n_{\rm bkg}$ correspond to the candidates in the signal and background regions, respectively. The signal region is defined within $\pm 50\mevcc$ of the mean \Bz mass, and the background region in the range $5350<\mkpimm<5700$~\mevcc.  The scale factor $x$ is the ratio of the estimated number of background candidates in the signal region over the number of candidates in the background region and is used to normalise the background subtraction.
+It has been checked in data that the angular distribution of the background is independent of \mkpimm within the precision of this measurement, and that the uncertainty on $x$ has negligible impact on the results.
+The weights, $w_{k}$, are the reciprocals of the candidates' efficiencies and account for the acceptance, described in Sec.~\ref{sec:kpimm:acceptance}.
 
-The reduced covariance matrix for deriving the statistical uncertainty in the 40 normalized moments is estimated as
+The covariance matrix describing the statistical uncertainties on the 40 normalised moments is computed as
 \begin{align}
 \label{eqn:red_cov_def}
-\bar{C}_{ij} = \left[C_{ij} + \frac{\Gamma_i \Gamma_j}{\Gamma_1^2} C_{11} - \frac{\Gamma_i C_{1j} + \Gamma_j C_{1i}}{\Gamma_1}\right] \frac{1}{\Gamma_1^2},  \;\; i,j \in \{2,...,41\}.
+\overline{C}_{ij} = \left[C_{ij} + \frac{\Gamma_i \Gamma_j}{\Gamma_1^2} C_{11} - \frac{\Gamma_i C_{1j} + \Gamma_j C_{1i}}{\Gamma_1}\right] \frac{1}{\Gamma_1^2},  \;\; i,j \in \{2,...,41\}.
 \end{align}
 
 \subsubsection{Toy studies}
@@ -133,7 +133,7 @@ $\overline{\Gamma}_{59}$ & $P_{6}^{1}\sqrt{2}\img(Y_{1}^{1})$ & \hphantom{$-$}0.
 
 \subsubsection{Results}
 
-The results for the normalised moments, $\overline{\Gamma}_{i}$, are given in Fig.~\ref{fig:results:moments}. The uncertainties shown are the quadratic sum of the statistical and systematic uncertainties. The results are also presented in Table~\ref{tab:results:moments}. The various sources of the systematic uncertainties are described in Sec.~\ref{sec:kpimm:systematics}.
+The results for the normalised moments, $\overline{\Gamma}_{i}$, are given in Fig.~\ref{fig:results:moments}. The uncertainties shown are the sums in quadrature of the statistical and systematic uncertainties. The results are also presented in Table~\ref{tab:results:moments}. The various sources of the systematic uncertainties are described in Sec.~\ref{sec:kpimm:systematics}.
 
 \begin{figure}[!tb]
 \centering
@@ -198,15 +198,15 @@ $\overline{\Gamma}_{41}$ & \hphantom{$-$}0.12 $\pm$ 0.11 $\pm$ 0.01 \\
 \end{tabular}
 \end{table}
 
-
-The distributions of each of the decay angles within the signal region are shown in Fig.~\ref{fig:gof_spd}. The acceptance-corrected data is represented by the black markers. The estimated signal distribution, derived from moments model by evaluating the sum in Eq.~\ref{eqn:vector_moments}, is shown by the blue shaded histogram. The projected background from the upper mass sideband is shown by the red hatched histogram. Within statistical uncertainties, the moments model is a good representation of the data for each of the decay angles.
+The distributions of each of the decay angles within the signal region are shown in Fig.~\ref{fig:gof_spd}. The estimated signal distribution is derived 
+from the moments model by evaluating the sum in Eq.~\ref{eqn:vector_moments}, which is found to provide a good representation of the data for each of the decay angles.
 
 \begin{figure}[!tb]
   \centering
   \includegraphics[width=0.45\textwidth]{figs/kpimm/angular-analysis/costhetal.pdf}
   \includegraphics[width=0.45\textwidth]{figs/kpimm/angular-analysis/costhetak.pdf}\\
   \includegraphics[width=0.45\textwidth]{figs/kpimm/angular-analysis/phi.pdf}
-  \caption{The distributions of each of the decay angles within the signal region. The acceptance-corrected data is represented by the points with error bars. The estimated signal distribution is shown by the blue shaded histogram. The projected background from the upper mass sideband is shown by the red hatched histogram.}
+  \caption{The distributions of each of the decay angles within the signal region. The acceptance-corrected data is represented by the points with error bars. The estimated signal distribution is shown by the blue shaded histogram. The projected background from the upper mass sideband is shown by the red hatched histogram, which is stacked onto the signal histogram.}
   \label{fig:gof_spd}
 \end{figure}
 
@@ -217,4 +217,11 @@ F_{\rm D} \equiv  \displaystyle - \frac{7}{18} \left(2 \overline{\Gamma}_{5} + 5
 \end{equation}
 
 \noindent
-Naively, one would expect a large D-wave contribution in this region, as observed in the amplitude analysis of \BdToJPsiKpi~\cite{belle-z-paper}. However, a supressed D-wave contribution is observed and, with the limited statistics currently available, it is only possible to set an upper limit of $F_{\rm D}<0.29$ at 95\% confidence level. This might be the indication of a large breaking of QCD factorisation in this decay mode.  Additionally, the values of the moments $\overline{\Gamma}_{2}$ and $\overline{\Gamma}_{3}$ imply the presence of large interference effects between the S- and P- or D-wave contributions.
+The D-wave fraction, $F_{\rm D}$, is estimated from the moments $\overline{\Gamma}_{5}$ and $\overline{\Gamma}_{10}$ as 
+
+\begin{equation}
+F_{\rm D} =  \displaystyle - \frac{7}{18} \left(2 \overline{\Gamma}_{5} + 5 \sqrt{5} \overline{\Gamma}_{10} \right).
+\end{equation}
+
+\noindent
+Naively, one would expect a large D-wave contribution in this region, as was seen in the amplitude analysis of \BdToJPsiKpi~\cite{belle-z-paper}. However, in \BdToKpimm no significant D-wave contribution is seen and, with the limited statistics currently available, it is only possible to set an upper limit of $F_{\rm D}<0.29$ at 95\% confidence level. This might be an indication of a large breaking of QCD factorisation in this decay mode.  Additionally, the values of the moments $\overline{\Gamma}_{2}$ and $\overline{\Gamma}_{3}$ imply the presence of large interference effects between the S- and P- or D-wave contributions.

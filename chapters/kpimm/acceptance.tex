@@ -5,15 +5,15 @@ The triggering, reconstruction and selection of candidates distort the distribut
 
 In order to take into account acceptance effects, a five dimensional efficiency function is determined from simulated four-body \BdToKpimm decays generated according to a phase space distribution. If the distributions of \qsq, \ctl, \ctk, $\phi$ and \mkpi were all generated flat, the distributions of the variables after reconstruction and selection would give the shape of the efficiency.  While this is true for \ctl, \ctk and $\phi$, it is not the case for \qsq and \mkpi. Therefore, the simulated candidates are reweighted in order to transform the reconstructed distributions to the efficiency shape.
 
-The efficiency is parameterised in terms of orthonormal Legendre polynomials of order $n$, $L_n(x)$, as
+The efficiency is parameterised in terms of Legendre polynomials of order $n$, $L_n(x)$, as
 \begin{equation}
 \begin{split}
-\varepsilon(\qsq',\ctl,&\ctk,\phi',\mkpi') = \\
-& \sum_{hijkl} c_{hijkl}~L_{h}(\qsq')L_{i}(\ctl)L_{j}(\ctk)L_{k}(\phi')L_{l}(\mkpi').
+\varepsilon(\qsqp,\ctl,&\ctk,\phip,\mkpip) = \\
+& \sum_{hijkl} c_{hijkl}~L_{h}(\qsqp)L_{i}(\ctl)L_{j}(\ctk)L_{k}(\phip)L_{l}(\mkpip).
  \end{split}
  \label{eqn:legendre}
 \end{equation}
-As the polynomials are orthonormal over the domain $x\in[-1,1]$, the variables $\qsq'$, $\phi'$ and $\mkpi'$ are used, which are obtained by linearly transforming \qsq, $\phi$ and \mkpi to lie in this range.
+As the polynomials are defined over the domain $x\in[-1,1]$, the variables \qsqp, \phip and \mkpip are used, which are obtained by linearly transforming \qsq, $\phi$ and \mkpi to lie in this range.
 
 The coefficients $c_{hijkl}$ are determined using a moment analysis of simulated four-body \BdToKpimm phase-space decays as
 
