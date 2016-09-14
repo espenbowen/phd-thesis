@@ -73,7 +73,7 @@ A loose preselection of candidates is performed to remove pathological events. T
 
 A multivariate classifier is used to reduce the level of combinatorial background. A Boosted Decision Tree (BDT) classifier~\cite{bdt}, with the Adaboost algorithm~\cite{adaboost} is employed. The BDT was originally developed for the angular analysis of \BdToKstmm~\cite{LHCB-PAPER-2015-051}. 
 
-The BDT uses a combination of kinematic and PID input variables: the \Bz candidate lifetime, the \Bz \ptot and \pt, the \Bz DIRA, the \Bz vertex quality $\chi^{2}$, the \dllkpi of the kaon and pion, the \dllmupi of the muons and the isolation of the four final state particles. The isolation exploits the idea that the daughters of `true' \BdToKpimm candidates should better isolated from other tracks in the event than those from `fake' candidates. 
+The BDT uses a combination of kinematic and PID input variables: the \Bz candidate lifetime, the \Bz \ptot and \pt, the \Bz DIRA, the \Bz vertex quality $\chi^{2}$, the \dllkpi of the kaon and pion, the \dllmupi of the muons and the isolation of the four final state particles. The isolation exploits the idea that the daughters of `true' \BdToKpimm candidates should better isolated from other tracks in the event than those from combinatorial candidates, coming from two distinct \B mesons. 
 
 The training uses \BdToJPsiKst candidates as a proxy for the signal and \BdToKstmm candidates from the upper mass sideband as a proxy for the background. A $k$-folding approach~\cite{kfold} is employed to allow the full dataset to be used for testing and training in an unbiased way. 
 
