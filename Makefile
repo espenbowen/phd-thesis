@@ -1,4 +1,4 @@
-thesis.pdf: thesis.tex thesis.bib chapters/*.tex chapters/*/*.tex
+thesis.pdf: thesis.tex thesis.bib title.tex chapters/*.tex chapters/*/*.tex
 	pdflatex thesis && bibtex thesis && pdflatex thesis && pdflatex thesis
 
 clean:
