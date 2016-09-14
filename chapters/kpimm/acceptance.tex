@@ -1,7 +1,7 @@
 \subsection{Acceptance correction}
 \label{sec:kpimm:acceptance}
 
-The triggering, reconstruction and selection of candidates distort the distributions of the decay angles \ctl, \ctk, $\phi$, as well as the \qsq and \mkpi distributions, leading to acceptance effects. The dominant sources of bias derive from the track momentum and impact parameter requirements. 
+The triggering, reconstruction and selection of signal candidates distorts their kinematic distributions. The dominant acceptance effects are due to the requirements on track momentum and impact parameter.
 
 In order to take into account acceptance effects, a five dimensional efficiency function is determined from simulated four-body \BdToKpimm decays generated according to a phase space distribution. If the distributions of \qsq, \ctl, \ctk, $\phi$ and \mkpi were all generated flat, the distributions of the variables after reconstruction and selection would give the shape of the efficiency.  While this is true for \ctl, \ctk and $\phi$, it is not the case for \qsq and \mkpi. Therefore, the simulated candidates are reweighted in order to transform the reconstructed distributions to the efficiency shape.
 
@@ -20,7 +20,7 @@ The coefficients $c_{hijkl}$ are determined using a moment analysis of simulated
 \begin{equation}
    \begin{split}
      c_{h,i,j,k,l} = \frac{1}{\sum w_{n}}\sum_{n=0}^{N}&w_{n}\left(\frac{2h+1}{2}\right)\left(\frac{2i+1}{2}\right)\left(\frac{2j+1}{2}\right)\left(\frac{2k+1}{2}\right)\left(\frac{2l+1}{2}\right)\\
-     &\times L_{h}(\qsq)L_{i}(\ctl)L_{j}(\ctk)L_{k}(\phi)L_{l}(\mkpi)~,
+     &\times L_{h}(\qsqp)L_{i}(\ctl)L_{j}(\ctk)L_{k}(\phip)L_{l}(\mkpip)~,
      \end{split}
  \end{equation}
 
@@ -30,16 +30,16 @@ The coefficients $c_{hijkl}$ are determined using a moment analysis of simulated
 \int_{-1}^{+1} L_{a}(x) L_{a'}(x) \deriv x = \frac{2}{2 a + 1}\delta_{ a a'}  ~.
 \end{equation}
 
- The sum in Eq.~\ref{eqn:legendre} encompasses $L_n(x)$ up to fourth order in \ctl and $\mkpi'$, sixth order in $\phi'$ and $\qsq'$, and eighth order in \ctk. The order of polynomial used in each case is the lowest order possible that gives good agreement between the efficiency function and the simulated four-body \BdToKpimm phase-space decays. The angular acceptance as a function of each of the kinematic variables in the region $0.1<\qsq<10.0\gevgevcccc$, $795<\mkpi<1530\mevcc$ is shown in Fig.~\ref{fig:acceptance}.
+ The sum in Eq.~\ref{eqn:legendre} encompasses $L_n(x)$ up to fourth order in \ctl and \mkpip, sixth order in \phip and \qsqp, and eighth order in \ctk. The order of polynomial used in each case is the lowest order possible that gives good agreement between the efficiency function and the simulated four-body \BdToKpimm phase-space decays. The angular acceptance as a function of each of the kinematic variables in the region $0.1<\qsq<10.0\gevgevcccc$, $795<\mkpi<1530\mevcc$ is shown in Fig.~\ref{fig:acceptance}.
 
 \begin{figure}[!tb]
   \centering
   \includegraphics[width=0.49\linewidth]{figs/kpimm/acceptance/ctl.pdf}
   \includegraphics[width=0.49\linewidth]{figs/kpimm/acceptance/ctk.pdf}\\
   \includegraphics[width=0.49\linewidth]{figs/kpimm/acceptance/phi.pdf}
-  \includegraphics[width=0.5\linewidth]{figs/kpimm/acceptance/q2.pdf}\\
-  \includegraphics[width=0.5\linewidth]{figs/kpimm/acceptance/mkpi.pdf}
+  \includegraphics[width=0.49\linewidth]{figs/kpimm/acceptance/q2.pdf}\\
+  \includegraphics[width=0.49\linewidth]{figs/kpimm/acceptance/mkpi.pdf}
 
-  \caption{Relative efficiency in each of the kinematic variables in the region $0.1<\qsq<10.0\gevgevcccc$, $795<\mkpi<1530\mevcc$ as determined from a moment analysis of simulated four-body \BdToKpimm decays. The efficiency function is shown by the dashed blue line.  The solid histograms indicate the distribution of simulated four-body \BdToKpimm phase-space decays used to determine the acceptance.}
+  \caption{Relative efficiency in each of the kinematic variables in the region $0.1<\qsq<10.0\gevgevcccc$, $795<\mkpi<1530\mevcc$ as determined from a moment analysis of simulated \BdToKpimm decays, shown as a histogram. The efficiency function is shown by the blue dashed line.}
 \label{fig:acceptance}
 \end{figure}
