@@ -48,7 +48,7 @@ In order to reconstruct the different track types, several tracking algorithms a
 
 The \velo tracking algorithm~\cite{fastvelo} is used to find tracks in the \velo. As there is a neglible magnetic field in the \velo, tracks are expected to be approximately straight lines. The track search begins in the most downstream layer of the \velo. Quadruplets of hits are searched for in the $r$-sensors as shown in Fig.~\ref{fig:velo-tracking}. If they are found, they are extended back to smaller $z$ adding hits that are consistent with coming from the same track. Next, the same quadruplet search is performed for backward-going tracks. Triplets are then searched for, first backward-going and then forward-going, requiring that the hits have not been used in the quadruplet search.
 
-Starting from the longest $r$-$z$ track, $\phi$ hits are searched for that are consistent with coming from the same track. These 3D tracks are then fitted with a $\chi^{2}$ minimization.
+Starting from the longest $r$-$z$ track, $\phi$ hits are searched for that are consistent with coming from the same track. These 3D tracks are then fitted with a $\chi^{2}$ minimisation.
 
 \begin{figure}[!tb]
   \centering
@@ -72,7 +72,7 @@ The Forward tracking algorithm~\cite{patforward} is used to find long tracks. A 
 \subsubsection{T seeding}
 \label{sec:track:algos:seeding}
 
-The T seeding algorithm~\cite{patseeding} is used to find T tracks. Track candidates are first searched for in the $x$-$z$ projection. A straight line is formed between suitable pairs of hits in T1 and T3. A compatible hit in T2 is added to form a parabola. Further hits in $x$ layers consistent with this parabola are added to the track candidate. A Hough transform is used to add stereo hits. A weighted least squares fit is then applied to each candidate.
+The T seeding algorithm~\cite{patseeding} is used to find T tracks. Track candidates are first searched for in the $x$-$z$ projection. A straight line is formed between suitable pairs of hits in T1 and T3. A compatible hit in T2 is added to form a parabola. Further hits in $x$ layers consistent with this parabola are added to the track candidate. A Hough transform is used to add stereo hits. A weighted least-squares fit is then applied to each candidate.
 
 \subsubsection{Track matching}
 \label{sec:track:algos:match}
@@ -82,13 +82,13 @@ The track matching algorithm~\cite{patmatch} is also used to form long tracks. I
 \subsubsection{Downstream tracking}
 \label{sec:track:algos:downstream}
 
-The downstream tracking algorithm~\cite{patdownstream,sascha} forms tracks containing hits in the TT(UT) sub-detector and T stations. Each T track is extrapolated back to find the corresponding ($x$, $y$) point at the center of the magnet. A track estimate is formed using this point and the nominal interaction point. Hits in the TT consistent with the track estimate are selected. For each TT hit, a new track estimate is formed and consistent $x$ hits are collected. The collection of $x$ hits is fitted in the $x$-$z$ projection and outliers are removed. Stereo hits are added, the track is refitted and further outliers are removed. Finally, the best track candidate is chosen according to the number of hits it contains and the value of the $\chi^{2}$ from the fit.
+The downstream tracking algorithm~\cite{patdownstream,sascha} forms tracks containing hits in the TT (UT) sub-detector and T stations. Each T track is extrapolated back to find the corresponding ($x$, $y$) point at the center of the magnet. A track estimate is formed using this point and the nominal interaction point. Hits in the TT consistent with the track estimate are selected. For each TT hit, a new track estimate is formed and consistent $x$ hits are collected. The collection of $x$ hits is fitted in the $x$-$z$ projection and outliers are removed. Stereo hits are added, the track is refitted and further outliers are removed. Finally, the best track candidate is chosen according to the number of hits it contains and the value of the $\chi^{2}$ from the fit.
 
 
 \subsubsection{Upstream tracking}
 \label{sec:track:algos:upstream}
 
-The upstream tracking algorithm~\cite{patvelott} forms tracks containing hits in the \velo and TT(UT) sub-detectors. These are generally low momentum tracks that will be bent out of acceptance by the magnet. It is executed at the end of the tracking sequence using \velo tracks which have not been upgraded to long tracks by any of the preceeding algorithms. 
+The upstream tracking algorithm~\cite{patvelott} forms tracks containing hits in the \velo and TT (UT) sub-detectors. These are generally low momentum tracks that will be bent out of acceptance by the magnet. It is executed at the end of the tracking sequence using \velo tracks which have not been upgraded to long tracks by any of the preceeding algorithms. 
 
 Each \velo track is linearly extrapolated to the TT. Search windows are opened in each layer and the distance $\Delta x$ between the track and each hit is calculated. These $\Delta x$ values are scaled to a reference plane at the center of the TT. A Hough transform is utilised to associate the selected hits to the \velo track. Hits from the same particle are expected to be projected to the same $x$ position in the reference plane while random hits should be uniformly distributed. This procedure is shown schematically in Fig.~\ref{fig:velott-tracking}. An explicit assumption is made that every associated hit should lie on the same side of the extrapolated \velo track in the $x$-$z$ plane. 
 
@@ -113,7 +113,7 @@ The purpose of the track fit  is to obtain the most accurate estimates of track 
 
 A Kalman filter is used to fit the tracks. With this approach, multiple scattering is taken into account as process noise and corrections due to energy losses are applied~\cite{kalman}. The transport through the magnetic field is evaluated using a Runge-Kutta method. The propagation and projection functions are linearised around a reference track state using a Taylor expansion~\cite{jeroen}.
 
-Track candidates can be considered as a collection of track states (initially provided by the individual tracking algorithms) and measurements (tracking station hits). The Kalman filter can be divided into two steps, shown schematically in Fig.~\ref{fig:kalman}. Firstly, the parameters of a state at $z_{k}$ are predicted given a state at $z_{k-1}$. Next, the state at $z_{k}$ is updated with information of the measurement at this position. These two steps are repeated until all the measurements have been added. In \lhcb the filter is run in both the forward and the backward directions and the average is taken for smoothing.
+Track candidates can be considered as a collection of track states (initially provided by the individual tracking algorithms) and measurements (tracking station hits). The Kalman filter can be divided into two steps, shown schematically in Fig.~\ref{fig:kalman}. Firstly, the parameters of a state at $z_{k}$ are predicted given a state at $z_{k-1}$. Next, the state at $z_{k}$ is updated with information of the measurement at this position. These two steps are repeated until all the measurements have been added. In \lhcb, the filter is run in both the forward and the backward directions and the average is taken for smoothing.
 
 \begin{figure}[!tb]
   \centering
@@ -125,7 +125,7 @@ Track candidates can be considered as a collection of track states (initially pr
 \subsection{Tracking performance}
 \label{sec:track:performance}
 
-The figures of merit used to evaluate the performance of tracking algorithms are the reconstruction efficiency, ghost rate and execution time and are determined using simulated events. The simulated samples used in the following sections to benchmark the performance of the upstream tracking algorithms for both the \lhcb Upgrade and \lhcb Run 2 are shown in Table~\ref{tab:track-mc-samples}.
+The figures of merit used to evaluate the performance of tracking algorithms are the reconstruction efficiency, ghost rate and execution time, which are determined using simulated events. The simulated samples used in the following chapters to benchmark the performance of the upstream tracking algorithms for both the \lhcb Upgrade and \lhcb Run 2 are shown in Table~\ref{tab:track-mc-samples}.
 
 \begin{table}[!tb]
 \caption{The simulated samples used in the following sections to benchmark the performance of the upstream tracking algorithms for both the \lhcb Upgrade and \lhcb Run 2.}
@@ -142,7 +142,7 @@ The figures of merit used to evaluate the performance of tracking algorithms are
 
 \subsubsection{Reconstruction efficiency}
 \label{sec:track:eff}
-The reconstruction efficiency is measured by comparing the number of correctly reconstructed tracks with the number of tracks defined to be reconstructible. This is made possible using truth information available in simulated samples. Within the \lhcb framework the following definitions are used:
+The reconstruction efficiency is measured by comparing the number of correctly reconstructed tracks with the number of tracks defined to be reconstructible. This is made possible using truth information available in simulated samples. Within the \lhcb framework the following definitions are used
 
 \begin{itemize}
 
@@ -164,7 +164,7 @@ When calculating the efficiency of the \velott (\velout) algorithm itself, parti
 
 When considering the effect of using \velott (\velout) tracks as input to the Forward algorithm, no requirement is made that the particle has associated TT (UT) hits or has been correctly reconstructed in the \velo. Therefore, any inefficiency contains contributions from both the \velott (\velout) algorithm and the acceptance of the TT (UT) detector. 
 
-Further requirements are made to both the numerator and the denominator:
+Further requirements are made to both the numerator and the denominator
 
 \begin{itemize}
 \item The particle is required not to be an electron.
@@ -183,7 +183,7 @@ A ghost track is a track that has no matching simulated particle. The ghost rate
 \text{Ghost rate}  = \frac{N_{\text{ghost~tracks}}}{N_{\text{tracks}}}.
 \end{equation}
 
-\noindent In all cases the following requirements are applied to both the numerator and denominator:
+\noindent In all cases the following requirements are applied to both the numerator and denominator
 
 \begin{itemize}
 \item The pseudorapidity of the track must lie between 2 and 5.
@@ -195,5 +195,5 @@ A track matched to a simulated particle with at least one other associated track
 \subsubsection{Execution time}
 \label{sec:track:timing}
 
-The execution time of the individual algorithms is measured by the \lhcb event reconstruction application, \brunel. As the timing is machine dependent, the same machine is used for each measurement to facilitate direct comparisons. A simulated ``minimum bias'' sample is used in order to not give undue weight to a certain kind of event.
+The execution times of the individual algorithms are measured by the \lhcb event reconstruction application, \brunel. As the timing is machine dependent, the same machine is used for each measurement to facilitate direct comparisons. A simulated ``minimum bias'' sample is used in order to not give undue weight to a certain kind of event.
 
