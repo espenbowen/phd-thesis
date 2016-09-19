@@ -9,8 +9,9 @@
 \section{Angular distribution}
 \label{sec:appendix:angular-distribution}
 
-The transversity-basis moments of the 41 orthonormal angular functions defined in Eq.~\ref{eqn:vector_moments} are shown in Table~\ref{table:spd_mom_trans}. The orthonormal angular basis is constructed out of the spherical harmonics, \mbox{$Y^m_l \equiv Y^m_l (\thetal,\phi)$}
-, and the reduced spherical harmonics, \mbox{${P^m_l \equiv \sqrt{2 \pi}Y^m_l(\thetak,0)}$}. The S, P and D-wave transversity amplitudes are denoted as $S^{\{L,R\}}$, $H^{\{L,R\}}_{\{0,\parallel,\perp\}}$ and $D^{\{L,R\}}_{\{0,\parallel,\perp\}}$, respectively.
+The transversity-basis moments of the 41 orthonormal angular functions defined in Eq.~\ref{eqn:vector_moments}
+ are shown in Table~\ref{table:spd_mom_trans}. The orthonormal angular basis is constructed out of spherical harmonics, \mbox{$Y^m_l \equiv Y^m_l (\thetal,\phi)$}, and reduced spherical harmonics, \mbox{${P^m_l \equiv \sqrt{2 \pi}Y^m_l(\thetak,0)}$}. The S-, P- and D-wave transversity amplitudes are denoted as $S^{\{L,R\}}$, $H^{\{L,R\}}_{\{0,\parallel,\perp\}}$ and $D^{\{L,R\}}_{\{0,\parallel,\perp\}}$, respectively.
+ 
 \begin{table}[!tb]
 \centering
 \caption{The transversity-basis moments of the 41 orthonormal angular functions $f_i(\Omega)$ in Eq.~\ref{eqn:vector_moments}.}
@@ -34,7 +35,7 @@ The transversity-basis moments of the 41 orthonormal angular functions defined i
  \includegraphics[width=0.49\textwidth]{figs/kpimm/data-mc/resampling/K_PIDmu.pdf}
  \includegraphics[width=0.49\textwidth]{figs/kpimm/data-mc/resampling/Pi_PIDmu.pdf}
  \includegraphics[width=0.49\textwidth]{figs/kpimm/data-mc/resampling/Pi_PIDp.pdf}
- \caption{Data-simulation agreement for the PID variables used in the selection of \BdToKpimm. The black data points show the distributions for sWeighted \BdToJPsiKst candidates in data. The red dashed histograms show the nominal distribution for simulated \BdToJPsiKst candidates. The blue histograms show the distribution for simulated \BdToJPsiKst candidates after the resampling procedure.}
+ \caption{Data-simulation agreement for the PID variables used in the selection of \BdToKpimm. The black data points show the distributions for background-subtracted \BdToJPsiKst decays in data. The red dashed histograms show the nominal distribution for simulated \BdToJPsiKst decays. The blue histograms show the distribution for simulated \BdToJPsiKst decays after the resampling procedure.}
 \label{fig:appendix:data-mc:pid}
 \end{figure}
 
@@ -59,7 +60,7 @@ The transversity-basis moments of the 41 orthonormal angular functions defined i
  \includegraphics[width=0.32\textwidth]{figs/kpimm/data-mc/bdt/Muplus_PIDmu.pdf}
  \includegraphics[width=0.32\textwidth]{figs/kpimm/data-mc/bdt/Muminus_PIDmu.pdf}
  
- \caption{Data-simulation agreement for the variables for each of the variables used as input to the BDT. The black data points show the distributions for sWeighted \BdToJPsiKst candidates in data. The blue dashed histograms show the distribution for resampled, simulated \BdToJPsiKst candidates. The green histograms show the distribution for resampled, simulated \BdToJPsiKst candidates with the candidate weights applied.}
+ \caption{Data-simulation agreement for the variables for each of the variables used as input to the BDT. The black data points show the distributions for background-subtracted \BdToJPsiKst decays in data. The blue dashed histograms show the distribution for resampled, simulated \BdToJPsiKst decays. The green histograms show the distribution for resampled, simulated \BdToJPsiKst decays with the candidate weights applied.}
  \label{fig:appendix:data-mc:bdtvars}
 \end{figure}
 
@@ -67,7 +68,7 @@ The transversity-basis moments of the 41 orthonormal angular functions defined i
 \section{Acceptance correction}
 \label{sec:appendix:acceptance}
 
-In order to study the correlations between the variables in the acceptance correction it is useful to look at two dimensional distributions.  Figures~\ref{fig:acceptance:2d_1}$-$\ref{fig:acceptance:2d_4} show the two dimensional distributions for each of the pairs of kinematic variables.  The plots on the left show the distributions for the simulated decays used to determine the acceptance correction.  The plots on the right show the distributions for toy events generated flat in each of the variables and weighted by the efficiency determined from the acceptance parameterisation. Good agreement is found between the two distributions.
+In order to study the correlations between the kinematic variables used in the acceptance correction it is useful to look at two dimensional distributions.  Figures~\ref{fig:acceptance:2d_1}$-$\ref{fig:acceptance:2d_4} show the two dimensional distributions for each of the pairs of variables.  The plots on the left show the distributions for the simulated decays used to determine the acceptance correction.  The plots on the right show the distributions for toy events generated flat in each of the variables and weighted by the efficiency determined from the acceptance parameterisation. Good agreement is found between the two distributions.
 
 \begin{figure}[!b]
  \centering
@@ -126,7 +127,7 @@ Figure~\ref{fig:appendix:massfit:bins} shows the fits to the \mkpimm distributio
 \section{Toy studies for the angular moments analysis}
 \label{sec:appendix:kpimm:toys}
 
-The results of the pull studies described in Sec.~\ref{sec:kpimm:angular-analysis:toys} are shown in Fig.~\ref{fig:appendix:kpimm:angular-analysis:toys:pulls:1} and Fig.~\ref{fig:appendix:kpimm:angular-analysis:toys:pulls:2}. No significant bias is observed for any of the measured moments.
+The results of the pull studies described in Sec.~\ref{sec:kpimm:angular-analysis:toys} are shown in Fig.~\ref{fig:appendix:kpimm:angular-analysis:toys:pulls:1} and Fig.~\ref{fig:appendix:kpimm:angular-analysis:toys:pulls:2}. No bias is observed for any of the measured moments and the statistical errors are correctly evaluated.
 
 \begin{sidewaysfigure}
 \centering
@@ -188,7 +189,7 @@ The effect of residual peaking background contributions is evaluated using pseud
 
 As described in Sec.~\ref{sec:selection:exclusive}, candidates from \BdToJPsiKpi decays can contribute a background if the \pim (\Kp) is misidentified as a \mun (\mup) and the \mun (\mup) is misidentified as a \pim (\Kp).  For the case of $\mun \leftrightarrow \pim$ swaps, the invariant mass of the \pim and the \mup, after assigning the \pim the \muon mass hypothesis, should be consistent with the known \jpsi mass. This new mass hypothesis is denoted $m_{(\pi\to\mu)\mu}$.
 
-Candidates are selected from data by requiring the $m_{(\pi\to\mu)\mu}$ invariant mass to be within $\pm200$\mevcc of the known \jpsi mass. The $m_{(\pi\to\mu)\mu}$ distribution is fitted using a Gaussian to model the \BdToJPsiKpi contribution and a second order Chebyshev polynomial to model the non-resonant contribution, as shown in Fig.~\ref{fig:appendix::kernel:massfit}. From the result of the fit, sWeights are determined in order to be able to isolate the \BdToJPsiKpi contribution.
+Candidates are selected from data by requiring the $m_{(\pi\to\mu)\mu}$ invariant mass to be within $\pm200$\mevcc of the known \jpsi mass. The $m_{(\pi\to\mu)\mu}$ distribution is fitted using a Gaussian to model the \BdToJPsiKpi contribution and a second order Chebyshev polynomial to model the non-resonant contribution, as shown in Fig.~\ref{fig:appendix::kernel:massfit}. The \sPlot technique~\cite{splot} is used to isolate the \BdToJPsiKpi contribution.
 
 \begin{figure}[!tb]
 \centering

@@ -24,19 +24,19 @@ For the case where there are only signal candidates present, the average weight 
 \label{eqn:average_eff}
 \end{equation}
  
-\noindent where $w_{i}$ is the event-by-event acceptance and $N$ is the number of candidates.  An estimate for the error on the average weight is given by,
+\noindent where $w_{i}$ is the event-by-event acceptance weight and $N$ is the number of candidates.  An estimate for the error on the average weight is given by,
  
 \begin{equation}
 \delta_{\overline{w}} = \sqrt{\frac{1}{N(N-1)}\sum\limits_{i}^{N}(w_{i}-\overline{w})^{2}}.
 \end{equation}
  
-Due to the presence of background, the average weight calculated in the signal mass window will be an admixture of the average weight for both signal candidates ($\overline{w}_{sig}$) and background candidates ($\overline{w}_{bkg}$),
+Due to the presence of background, the average weight calculated in the signal region will be an admixture of the average weight for both signal candidates ($\overline{w}_{sig}$) and background candidates ($\overline{w}_{bkg}$),
  
 \begin{equation}
 \overline{w}_{mix} = \frac{N_{sig}\overline{w}_{sig} + N_{bkg}\overline{w}_{bkg}}{N_{sig}+N_{bkg}},
 \end{equation}
  
-\noindent where $N_{sig}$ and $N_{bkg}$ are the number of signal and background events in the signal mass window, respectively. This can be rearranged to give the average weight for the signal candidates,
+\noindent where $N_{sig}$ and $N_{bkg}$ are the number of signal and background events in the signal region, respectively. This can be rearranged to give the average weight for the signal candidates,
  
 \begin{equation}
 \overline{w}_{sig} = \frac{(N_{sig}+N_{bkg})\overline{w}_{mix} -  N_{bkg}\overline{w}_{bkg}}{N_{sig}}.
@@ -61,7 +61,7 @@ The signal region is defined as $5230<\mkpimm<5330$~\mevcc and the background re
 
 \subsubsection{Toy studies}
 
-Toy studies are performed for the extraction of $\overline{w}_{sig}N_{sig}$ with different numbers of signal and background candidates.  In each toy $N_{sig}$, $N_{bkg}$ are Poisson fluctuated.  The nominal mass models, described in Sec.~\ref{sec:kpimm:massfit}, are used to generate signal and background candidates. The weights for both signal and background are sampled from two gaussian functions with different means. 
+Toy studies are performed for the extraction of $\overline{w}_{sig}N_{sig}$ with different numbers of signal and background candidates.  In each toy, $N_{sig}$ and $N_{bkg}$ are Poisson fluctuated.  The nominal mass model, described in Sec.~\ref{sec:kpimm:massfit}, is used to generate signal and background candidates. The weights for both signal and background are sampled from two gaussian functions with different means. 
 
 Pull studies are performed to check that the method is unbiased and correctly estimates the uncertainty. The pull of the observable $a$ is defined as $(a_{\rm meas}-a_{\rm gen})/\sigma(a)_{\rm meas}$~\cite{lyons-pulls}. If the method is unbiased and the coverage is correct, the pull distribution should be a Gaussian centred at zero with unit width. The pulls for the extraction of $\overline{w}_{sig}N_{sig}$ are shown in Fig.~\ref{fig:bf:pulls}. No bias is observed and the statistical error is correctly evaluated.
  
