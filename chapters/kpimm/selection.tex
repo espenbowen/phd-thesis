@@ -1,7 +1,7 @@
 \subsection{Candidate selection}
 \label{sec:kpimm:selection}
 
-The selection of \BdToKpimm candidates comprises several steps. Firstly, candidates are required to have `fired' at least one of the specified trigger lines at each of the three stages of the trigger. Subsequently, candidates must pass two sets of requirements: the first is a common selection known as `stripping' and the second is a loose preselection. Next, combinatorial background candidates are reduced using a multivariate classifier. Finally, exclusive backgrounds are removed with specific vetoes.
+The selection of \BdToKpimm candidates comprises several steps. Firstly, candidates are required to have `fired' at least one of the specified trigger lines at each of the three stages of the trigger. Subsequently, candidates must pass two sets of requirements: the first is a common selection known as `stripping' and the second is a loose preselection. Next, combinatorial background candidates are reduced using a multivariate classifier. Finally, exclusive backgrounds, such as misidentified \LbTopKmm decays, are removed with specific vetoes.
 
 \subsubsection{Data samples}
 
@@ -9,11 +9,11 @@ The Run 1 data sample collected by the \lhcb experiment is used for this analysi
 
 \subsubsection{Trigger requirements}
 
-At the first stage of the trigger, \lone, the event must have been triggered by a single muon from the \BdToKpimm decay. At the second level of the trigger, \hltone, at least one of two possible trigger lines must have been triggered by a single daughter particle from the \BdToKpimm decay. At the final level of the trigger, \hlttwo, at least one of several trigger lines must have been triggered by the daughters of the \BdToKpimm decay: these include both topological and muon triggers.
+At the first stage of the trigger, \lone, the event must have been triggered by a single muon from the \BdToKpimm decay. At the second level of the trigger, \hltone, at least one of two possible trigger lines must have been triggered by a single daughter particle from the \BdToKpimm decay. At the final level of the trigger, \hlttwo, at least one of several trigger lines must have been triggered by the daughters of the \BdToKpimm decay: these include both topological and muon triggers~\cite{LHCb-DP-2012-004}.
 
 \subsubsection{Stripping and preselection}
 
-The stripping is a set of common, cut-based requirements used to loosely select candidates of interest for similar analyses. The stripping line used in this analysis selects candidates of the form $\decay{\B}{X\mumu}$, where $X$ is one or more hadrons. The full set of stripping requirements are shown in Table~\ref{table:stripping}. The boolean variable \texttt{IsMuon} is used to select muons and requires the particle to have left hits in a given number of muon stations depending on its measured momentum. A global event cut (GEC) is applied on the number of hits in the SPD to reject very high multiplicity events. 
+The stripping is a set of common, cut-based requirements used to loosely select candidates of interest for similar analyses. The stripping line used in this analysis selects candidates of the form $\decay{\B}{X\mumu}$, where $X$ is one or more hadrons. The full set of stripping requirements are shown in Table~\ref{table:stripping}. The boolean variable \texttt{IsMuon} is used to select muons and requires the particle to have left hits in a given number of muon stations depending on its measured momentum. A global event cut (GEC) is applied on the number of hits in the SPD to reject very high multiplicity events. The number of SPD hits is an approximation of the number of charged particles in the detector. 
 
 \begin{table}[!tb]
   \centering
@@ -73,14 +73,16 @@ A loose preselection of candidates is performed to remove pathological events. T
 
 A multivariate classifier is used to reduce the level of combinatorial background. A Boosted Decision Tree (BDT) classifier~\cite{bdt}, with the Adaboost algorithm~\cite{adaboost} is employed. The BDT was originally developed for the angular analysis of \BdToKstmmP~\cite{LHCB-PAPER-2015-051}. 
 
-The BDT uses a combination of kinematic and PID input variables: the \Bz candidate lifetime, the \Bz \ptot and \pt, the \Bz DIRA, the \Bz vertex quality $\chi^{2}$, the \dllkpi of the kaon and pion, the \dllmupi of the muons and the isolation of the four final state particles. The isolation exploits the idea that the daughters of `true' \BdToKpimm candidates should better isolated from other tracks in the event than those from combinatorial candidates, which originate from two distinct \B mesons. 
+The BDT uses a combination of kinematic and PID input variables: the \Bz candidate lifetime, the \Bz \ptot and \pt, the \Bz DIRA, the \Bz vertex quality $\chi^{2}$, the \dllkpi of the kaon and pion, the \dllmupi of the muons and the isolation of the four final state particles. DIRA is the angle between the particle's momentum vector and the vector connecting its decay vertex and the PV. The isolation exploits the idea that the daughters of `true' \BdToKpimm candidates should better isolated from other tracks in the event than those from combinatorial candidates, which originate from two distinct \B mesons. 
 
 The training uses \BdToJPsiKpi candidates as a proxy for the signal and \BdToKpimm candidates from the upper mass sideband as a proxy for the background. A $k$-folding approach~\cite{kfold} is employed to allow the full dataset to be used for testing and training in an unbiased way. The dataset is randomly divided into $k=10$ samples of equal size. Ten classifiers are trained, each using nine signal and nine background samples. Each classifier is then applied to the remaining sample that was omitted during the training. This approach allows $90\%$ of the dataset to be used when training each classifier, compared to only $50\%$ when taking the traditional approach of dividing the dataset in two.
 
 \subsubsection{Exclusive backgrounds}
 \label{sec:selection:exclusive}
 
-Several additional requirements are applied to remove contributions from decay modes that will peak at, or near to, the signal peak and therefore distort the distributions of \ctl, \ctk and $\phi$. These decay modes include \LbTopKmm and \BuToKmm as well as misidentified \BdToJPsiKpi, \BdToPsitwosKpi and \BdToKpimm. The full set of requirements are presented in Table~\ref{table:peaking}. These requirements reduce the expected contamination from exclusive background candidates to the level of 2\% of the signal yield,
+Several additional requirements are applied to remove contributions from decay modes that will peak at, or near to, the signal peak and therefore distort the distributions of \ctl, \ctk and $\phi$. 
+%These decay modes include \LbTopKmm and \BuToKmm as well as misidentified \BdToJPsiKpi, \BdToPsitwosKpi and \BdToKpimm. 
+The full set of requirements are presented in Table~\ref{table:peaking}. These requirements reduce the expected contamination from exclusive background candidates to the level of 2\% of the signal yield,
 
 A background from \LbTopKmm decays arises when the \proton is reconstructed as either of the hadron candidates. Candidates are rejected using PID information and alternative mass hypotheses. For the case when the \proton is reconstructed as the \pion, a new mass is constructed where the \pion is given the \proton mass hypothesis. Likewise for the case when the \proton is reconstructed as the \kaon, a new mass is constructed where the \kaon is given the \proton mass hypothesis, and the \pion the \kaon mass hypothesis. These new mass hypotheses are denoted as \mSwappKmm and \mDoubleSwappKmm repectively. Candidates from \LbTopKmm decays are expected have \mSwappKmm or \mDoubleSwappKmm consistent with the known \Lb mass.
 

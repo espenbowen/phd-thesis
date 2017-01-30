@@ -20,7 +20,7 @@ The inital version of the \velout algorithm for the \lhcb upgrade was a replicat
 
 The reconstruction efficiency, ghost rate and execution time for the initial version (\texttt{v1r2}) of the \velout algorithm are shown in Table~\ref{tab:perf_velout_v1r2}. The reconstruction efficiency as a function of \ptot and \pt are shown in Fig.~\ref{fig:eff_velout_v1r2}. The ghost rate as a function of \ptot and \pt are shown in Fig.~\ref{fig:gr_velout_v1r2}. 
 
-The execution time of 27.20\ms is too slow for the algorithm to be used in the context of a software trigger. For reference, the track reconstruction in the \velo takes $\sim$ 1.8\ms. In order to be included, the \velout algorithm should perform with a comparable or reduced execution time.
+The execution time of 27.20\ms is too slow for the algorithm to be used in the context of a software trigger. For reference, the track reconstruction in the \velo takes $\sim$1.8\ms. In order to be included, the \velout algorithm should perform with a comparable or reduced execution time.
 
 The reconstruction efficiency is also too low for the algorithm to be used in the context of a software trigger as any inefficiency will be propagated to the next step of the sequence. Furthermore, the efficiency is observed to decrease as a function of \ptot. This is unusual as higher \ptot tracks should bend less in the fringe magnetic field and be simpler to reconstruct.
 
@@ -62,7 +62,7 @@ Previously, the UT hits in each layer were sorted into 12 distinct detector regi
 
 \subsubsection{Hit clustering}
 
-The inital version of the \velout algorithm used a Hough transform based on the distance of the hit from the linear extrapolation of the \velo track to find cluster candidates. It required that all hits were located on one side of the extrapolated \velo track in the $x$-$z$ plane. While this is a good assumption for low \ptot tracks, it is not the case for high \ptot tracks. For high \ptot tracks, a significant number have at least one hit on the opposite side of the linearly extrapolated \velo track, as shown in Fig.~\ref{fig:wrong_side_hits}. This caused the track reconstruction efficiency to fall with increasing \ptot.
+The inital version of the \velout algorithm used a Hough transform based on the distance of the hit from the linear extrapolation of the \velo track to find cluster candidates. It required that all hits were located on one side of the extrapolated \velo track in the $x$-$z$ plane. While this is a good assumption for low \ptot tracks, it is not the case for high \ptot tracks. For high \ptot tracks, a significant number have at least one hit on the opposite side of the linearly extrapolated \velo track, as shown in Fig.~\ref{fig:wrong_side_hits}. This causes the fall in the track reconstruction efficiency with increasing \ptot.
 
 \begin{figure}[!tb]
 \centering

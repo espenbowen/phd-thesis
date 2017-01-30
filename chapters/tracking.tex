@@ -109,7 +109,7 @@ As there are two independent algorithms to produce long tracks and several track
 \subsection{Track fit}
 \label{sec:track:fit}
 
-The purpose of the track fit  is to obtain the most accurate estimates of track parameters along with their corresponding covariances. Track parameters are used to match to particle identification objects (e.g. Cherenkov rings), find primary and secondary vertices and calculate the kinematics and invariant masses of particle combinations. The track $\chi^{2}$ is used to select good quality tracks. 
+The purpose of the track fit  is to obtain the most accurate estimates of track parameters along with their corresponding covariances. Track parameters are used to calculate the kinematics and invariant masses of particle combinations, match to particle identification objects (e.g. Cherenkov rings) and find primary and secondary vertices. The track $\chi^{2}$ is used to select good quality tracks. 
 
 A Kalman filter is used to fit the tracks. With this approach, multiple scattering is taken into account as process noise and corrections due to energy losses are applied~\cite{kalman}. The transport through the magnetic field is evaluated using a Runge-Kutta method. The propagation and projection functions are linearised around a reference track state using a Taylor expansion~\cite{jeroen}.
 
